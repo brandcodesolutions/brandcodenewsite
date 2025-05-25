@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sites Profissionais - 3x de R$149 no boleto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --secondary: #1e40af;
+            --accent: #60a5fa;
+            --light: #eff6ff;
+            --dark: #1e1e1e;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: var(--gradient);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: var(--gradient);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .price-tag {
+            background: white;
+            color: var(--primary);
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button {
+            background-color: white;
+            color: var(--primary);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 0 10px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .cta-button.secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .cta-button.secondary:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+        
+        .cta-button.avista {
+            background-color: #10b981;
+            color: white;
+        }
+        
+        .cta-button.avista:hover {
+            background-color: #059669;
+        }
+        
+        .button-group {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        /* Features */
+        .features {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            background: var(--gradient);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 30px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* Portfolio */
+        .portfolio {
+            padding: 80px 0;
+            background-color: #f1f5f9;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .portfolio-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(30, 58, 138, 0.9);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+        
+        .portfolio-overlay h3 {
+            margin-bottom: 10px;
+        }
+        
+        /* Pricing */
+        .pricing {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 10px;
+            padding: 40px 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            max-width: 400px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--accent);
+            color: white;
+            padding: 5px 20px;
+            font-weight: 600;
+            transform: rotate(45deg) translate(30%, -50%);
+            transform-origin: top right;
+            font-size: 0.8rem;
+        }
+        
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+        
+        .pricing-price span {
+            font-size: 1rem;
+            color: #64748b;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .pricing-features li i {
+            color: var(--accent);
+            margin-right: 10px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: #f1f5f9;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .author-info h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        
+        /* CTA */
+        .cta {
+            padding: 100px 0;
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                background: var(--primary);
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                transition: all 0.5s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button {
+                margin: 5px 0;
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .whatsapp-button {
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo" style="display: flex; align-items: center;">
+                    <img src="img/B branco.png" alt="Logo" style="height: 50px; width: auto;"/>
+                </div>
+                
+                
+                <ul class="nav-links">
+                    <li><a href="#features">Vantagens</a></li>
+                    <li><a href="#portfolio">Portfólio</a></li>
+                    <li><a href="#pricing">Preços</a></li>
+                    <li><a href="#testimonials">Depoimentos</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Sites Profissionais que Impulsionam seu Negócio</h1>
+            <p>Tenha um site moderno, responsivo e com design exclusivo para alavancar suas vendas e presença online</p>
+            <div class="price-tag">3x de R$149 no boleto</div>
+            <div class="button-group">
+                <button class="cta-button" onclick="window.location.href='https://pay.kiwify.com.br/jsT26qL'">
+                    Quero meu site agora!
+                </button>
+                <button class="cta-button avista" onclick="window.location.href='https://pay.kiwify.com.br/njhVX7C'">
+                    Quero pagar à vista (10% off)
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Por que escolher nossos sites?</h2>
+                <p>Todos os nossos projetos incluem as melhores tecnologias e recursos para seu negócio se destacar</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>100% Responsivo</h3>
+                    <p>Seu site perfeito em qualquer dispositivo: celular, tablet ou computador.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Super Rápido</h3>
+                    <p>Otimizado para carregamento ultrarrápido, melhorando sua taxa de conversão.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Otimizado para SEO</h3>
+                    <p>Pronto para ser encontrado no Google e outros mecanismos de busca.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Segurança Premium</h3>
+                    <p>Proteção avançada contra hackers e ameaças virtuais.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Suporte 24/7</h3>
+                    <p>Equipe especializada disponível para te ajudar quando precisar.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Integrações</h3>
+                    <p>WhatsApp, redes sociais, Google Analytics e muito mais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nosso Portfólio</h2>
+                <p>Confira alguns dos sites que já desenvolvemos para nossos clientes</p>
+            </div>
+            <div class="portfolio-grid">
+                <!-- Item 1 -->
+                <div class="portfolio-item">
+                    <img src="img/1000626148.jpg" alt="Site 1" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Loja de Cosméticos</h3>
+                        <p>Site institucional com catálogo de produtos e integração com WhatsApp</p>
+                        <a href="#" class="cta-button" style="margin-top: 10px; display: inline-block;">Ver detalhes</a>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="portfolio-item">
+                    <img src="img/1000626142.jpg" alt="Site 2" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Clínica Médica</h3>
+                        <p>Site profissional com agendamento online e área de pacientes</p>
+                        <a href="#" class="cta-button" style="margin-top: 10px; display: inline-block;">Ver detalhes</a>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="portfolio-item">
+                    <img src="img/1000626144.jpg" alt="Site 3" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Restaurante Gourmet</h3>
+                        <p>Site com cardápio digital, reservas online e galeria de fotos</p>
+                        <a href="#" class="cta-button" style="margin-top: 10px; display: inline-block;">Ver detalhes</a>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="portfolio-item">
+                    <img src="img/1000626146.jpg" alt="Site 4" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Consultoria Financeira</h3>
+                        <p>Site profissional com blog integrado e formulário de contato</p>
+                        <a href="#" class="cta-button" style="margin-top: 10px; display: inline-block;">Ver detalhes</a>
+                    </div>
+                </div>
+                <!-- Item 5 
+                <div class="portfolio-item">
+                    <img src="https://source.unsplash.com/random/600x400/?website,design,5" alt="Site 5" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Academia</h3>
+                        <p>Site com modalidades, horários e formulário de matrícula</p>
+                        <a href="#" class="cta-button" style="margin-top: 10px; display: inline-block;">Ver detalhes</a>
+                    </div>
+                </div>-->
+                <!-- Item 6 
+                <div class="portfolio-item">
+                    <img src="https://source.unsplash.com/random/600x400/?website,design,6" alt="Site 6" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Imobiliária</h3>
+                        <p>Portal completo com busca de imóveis e cadastro de clientes</p>
+                        <a href="#" class="cta-button" style="margin-top: 10px; display: inline-block;">Ver detalhes</a>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Planos</h2>
+                <p>Escolha o plano perfeito para o seu negócio</p>
+            </div>
+            <div class="pricing-card">
+                <div class="pricing-badge">Mais Popular</div>
+                <h3>Site Profissional</h3>
+                <div class="pricing-price">3x de R$149 <span>ou R$399 à vista</span></div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> Hospedagem Grátis 1 ano</li>
+                    <li><i class="fas fa-check"></i> Domínio Grátis 1 ano</li>
+                    <li><i class="fas fa-check"></i> 100% Responsivo</li>
+                    <li><i class="fas fa-check"></i> Formulário de Contato</li>
+                    <li><i class="fas fa-check"></i> Integração com WhatsApp</li>
+                    <li><i class="fas fa-check"></i> Galeria de Imagens</li>
+                    <li><i class="fas fa-check"></i> SEO Básico</li>
+                    <li><i class="fas fa-check"></i> Suporte por 1 ano</li>
+                </ul>
+                <div class="button-group">
+                    <button class="cta-button" onclick="window.location.href='https://pay.kiwify.com.br/jsT26qL'">
+                        Parcelado (3x R$149)
+                    </button>
+                    <button class="cta-button avista" onclick="window.location.href='https://pay.kiwify.com.br/njhVX7C'">
+                        À vista (R$399)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>O que nossos clientes dizem</h2>
+                <p>Veja a opinião de quem já contratou nossos serviços</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Meu site ficou incrível! A equipe foi muito atenciosa e o resultado superou minhas expectativas. Minhas vendas aumentaram 40% depois que o site entrou no ar."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Cliente 1" class="author-img">
+                        <div class="author-info">
+                            <h4>Ana Carolina</h4>
+                            <p>Loja de Moda Feminina</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Profissionalismo e qualidade impressionantes. O site ficou exatamente como eu queria e o melhor: apareceu na primeira página do Google em menos de 2 meses!"
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Cliente 2" class="author-img">
+                        <div class="author-info">
+                            <h4>Carlos Eduardo</h4>
+                            <p>Clínica Odontológica</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Não poderia estar mais satisfeito! O atendimento foi excelente e o site ficou perfeito. Agora meus clientes conseguem agendar horários online, o que facilitou muito meu trabalho."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente 3" class="author-img">
+                        <div class="author-info">
+                            <h4>Mariana Silva</h4>
+                            <p>Personal Trainer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Pronto para transformar seu negócio?</h2>
+            <p>Fale com nossos especialistas e descubra como podemos criar o site perfeito para você</p>
+            <div class="button-group">
+                <button class="cta-button" onclick="window.location.href='https://pay.kiwify.com.br/jsT26qL'">
+                    Quero parcelar em 3x
+                </button>
+                <button class="cta-button avista" onclick="window.location.href='https://pay.kiwify.com.br/njhVX7C'">
+                    Quero pagar à vista
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20sites" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>WebSolutions</h3>
+                    <p>Criamos sites profissionais que geram resultados reais para seu negócio.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#features">Vantagens</a></li>
+                        <li><a href="#portfolio">Portfólio</a></li>
+                        <li><a href="#pricing">Preços</a></li>
+                        <li><a href="#testimonials">Depoimentos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Serviços</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Sites Institucionais</a></li>
+                        <li><a href="#">Lojas Virtuais</a></li>
+                        <li><a href="#">Landing Pages</a></li>
+                        <li><a href="#">Blogs Profissionais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contato</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone-alt"></i> (11) 99999-9999</li>
+                        <li><i class="fas fa-envelope"></i> contato@websolutions.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> São Paulo - SP</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 WebSolutions. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Fechar menu mobile após clicar
+                if(navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+        
+        // Animação ao rolar
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.feature-card, .portfolio-item, .testimonial-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if(elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Adiciona opacidade inicial para animação
+        window.addEventListener('load', () => {
+            const elements = document.querySelectorAll('.feature-card, .portfolio-item, .testimonial-card');
+            elements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'all 0.5s ease';
+            });
+            
+            // Trigger animation
+            setTimeout(animateOnScroll, 500);
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // WhatsApp Button Tracking
+        document.querySelector('.whatsapp-button').addEventListener('click', function() {
+            // Aqui você pode adicionar código de tracking (Google Analytics, Facebook Pixel, etc.)
+            console.log('WhatsApp button clicked');
+        });
+    </script>
+</body>
+</html>
