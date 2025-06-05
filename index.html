@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sites Profissionais - 3x de R$149 no boleto</title>
+    <title>Sites Profissionais - Orçamento Personalizado</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Meta Pixel Code -->
 <script>
@@ -128,18 +128,6 @@
             margin: 0 auto 40px;
         }
         
-        .price-tag {
-            background: white;
-            color: var(--primary);
-            display: inline-block;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-        
         .cta-button {
             background-color: white;
             color: var(--primary);
@@ -170,15 +158,6 @@
         .cta-button.secondary:hover {
             background-color: white;
             color: var(--primary);
-        }
-        
-        .cta-button.avista {
-            background-color: #10b981;
-            color: white;
-        }
-        
-        .cta-button.avista:hover {
-            background-color: #059669;
         }
         
         .button-group {
@@ -301,64 +280,51 @@
             margin-bottom: 10px;
         }
         
-        /* Pricing */
-        .pricing {
+        /* Budget Section */
+        .budget {
             padding: 80px 0;
             text-align: center;
+            background-color: white;
         }
         
-        .pricing-card {
-            background: white;
+        .budget-steps {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .budget-step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            background: #f8fafc;
             border-radius: 10px;
-            padding: 40px 30px;
+            padding: 30px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            max-width: 400px;
-            margin: 0 auto;
             position: relative;
-            overflow: hidden;
         }
         
-        .pricing-badge {
+        .step-number {
             position: absolute;
-            top: 0;
-            right: 0;
-            background: var(--accent);
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
             color: white;
-            padding: 5px 20px;
-            font-weight: 600;
-            transform: rotate(45deg) translate(30%, -50%);
-            transform-origin: top right;
-            font-size: 0.8rem;
-        }
-        
-        .pricing-price {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin: 20px 0;
-        }
-        
-        .pricing-price span {
-            font-size: 1rem;
-            color: #64748b;
-        }
-        
-        .pricing-features {
-            list-style: none;
-            margin: 30px 0;
-            text-align: left;
-        }
-        
-        .pricing-features li {
-            padding: 10px 0;
-            border-bottom: 1px solid #e2e8f0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
+            justify-content: center;
+            font-weight: bold;
         }
         
-        .pricing-features li i {
-            color: var(--accent);
-            margin-right: 10px;
+        .budget-step h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
         }
         
         /* Testimonials */
@@ -577,6 +543,15 @@
                 max-width: 300px;
             }
             
+            .budget-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .budget-step {
+                width: 100%;
+            }
+            
             .whatsapp-button {
                 width: 50px;
                 height: 50px;
@@ -596,11 +571,10 @@
                     <img src="img/B branco.png" alt="Logo" style="height: 50px; width: auto;"/>
                 </div>
                 
-                
                 <ul class="nav-links">
                     <li><a href="#features">Vantagens</a></li>
                     <li><a href="#portfolio">Portfólio</a></li>
-                    <li><a href="#pricing">Preços</a></li>
+                    <li><a href="#budget">Orçamento</a></li>
                     <li><a href="#testimonials">Depoimentos</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>
@@ -614,15 +588,15 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Criamos seu site gratuitamente</h1>
-            <p>Pague somente pela hospedagem e suporte especializado</p>
+            <h1>Sites Profissionais Sob Medida</h1>
+            <p>Desenvolvemos a solução perfeita para o seu negócio com design exclusivo e tecnologia de ponta</p>
             
-           
-
             <div class="button-group">
-                
-                <button class="cta-button avista" onclick="window.location.href='#pricing'">
-                    Ver Plano
+                <button class="cta-button" onclick="window.location.href='#budget'">
+                    Solicitar Orçamento
+                </button>
+                <button class="cta-button secondary" onclick="window.location.href='#portfolio'">
+                    Ver Portfólio
                 </button>
             </div>
         </div>
@@ -633,7 +607,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Por que escolher nossos sites?</h2>
-                <p>Todos os nossos projetos incluem as melhores tecnologias e recursos para seu negócio se destacar</p>
+                <p>Todos os nossos projetos são desenvolvidos com as melhores tecnologias para seu negócio se destacar online</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
@@ -668,8 +642,8 @@
                     <div class="feature-icon">
                         <i class="fas fa-headset"></i>
                     </div>
-                    <h3>Suporte 24/7</h3>
-                    <p>Equipe especializada disponível para te ajudar quando precisar.</p>
+                    <h3>Suporte Personalizado</h3>
+                    <p>Equipe especializada para te ajudar no que precisar.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -726,55 +700,38 @@
                         <a href="https://www.heyviagens.com.br/" class="cta-button" style="margin-top: 10px; display: inline-block;">Acesse</a>
                     </div>
                 </div>
-                <!-- Item 5 
-                <div class="portfolio-item">
-                    <img src="https://source.unsplash.com/random/600x400/?website,design,5" alt="Site 5" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Academia</h3>
-                        <p>Site com modalidades, horários e formulário de matrícula</p>
-                        <a href="#" class="cta-button" style="margin-top: 10px; display: inline-block;">Ver detalhes</a>
-                    </div>
-                </div>-->
-                <!-- Item 6 
-                <div class="portfolio-item">
-                    <img src="https://source.unsplash.com/random/600x400/?website,design,6" alt="Site 6" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Imobiliária</h3>
-                        <p>Portal completo com busca de imóveis e cadastro de clientes</p>
-                        <a href="#" class="cta-button" style="margin-top: 10px; display: inline-block;">Ver detalhes</a>
-                    </div>-->
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing -->
-    <section class="pricing" id="pricing">
+    <!-- Budget Section -->
+    <section class="budget" id="budget">
         <div class="container">
             <div class="section-title">
-                <h2>Nossos Planos</h2>
-                <p>Escolha o plano perfeito para o seu negócio</p>
+                <h2>Como funciona nosso orçamento</h2>
+                <p>Desenvolvemos soluções personalizadas para cada necessidade</p>
             </div>
-            <div class="pricing-card">
-                <div class="pricing-badge">Mais Popular</div>
-                <h3>Site Profissional</h3>
-                <div class="pricing-price">59/mês<span></span></div>
-                <ul class="pricing-features">
-                    <li><i class="fas fa-check"></i> Hospedagem Inclusa</li>
-                    
-                    <li><i class="fas fa-check"></i> 100% Responsivo</li>
-                    <li><i class="fas fa-check"></i> Formulário de Contato</li>
-                    <li><i class="fas fa-check"></i> Integração com WhatsApp</li>
-                    <li><i class="fas fa-check"></i> Galeria de Imagens</li>
-                    <li><i class="fas fa-check"></i> SEO Completo</li>
-                    <li><i class="fas fa-check"></i> Suporte</li>
-                </ul>
-                <div class="button-group">
-                    
-                    <button class="cta-button avista" onclick="window.location.href='https://pay.kiwify.com.br/t1dVY2Z'">
-                        Pedir Agora!
-                    </button>
+            <div class="budget-steps">
+                <div class="budget-step">
+                    <div class="step-number">1</div>
+                    <h3>Nos conte sobre seu projeto</h3>
+                    <p>Entre em contato e nos conte sobre seu negócio, necessidades e objetivos para o site.</p>
                 </div>
+                <div class="budget-step">
+                    <div class="step-number">2</div>
+                    <h3>Análise e proposta</h3>
+                    <p>Analisamos seu caso e elaboramos uma proposta personalizada com escopo, prazos e investimento.</p>
+                </div>
+                <div class="budget-step">
+                    <div class="step-number">3</div>
+                    <h3>Desenvolvimento</h3>
+                    <p>Após aprovação, iniciamos o desenvolvimento com acompanhamento em todas as etapas.</p>
+                </div>
+            </div>
+            <div style="margin-top: 50px;">
+                <button class="cta-button" onclick="window.location.href='https://wa.me/5518997330574?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20um%20site'">
+                    Solicitar Orçamento
+                </button>
             </div>
         </div>
     </section>
@@ -816,7 +773,7 @@
                         "Não poderia estar mais satisfeito! O atendimento foi excelente e o site ficou perfeito. Agora meus clientes conseguem agendar horários online, o que facilitou muito meu trabalho."
                     </div>
                     <div class="testimonial-author">
-                        <img src="" alt="Cliente 3" class="author-img">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Cliente 3" class="author-img">
                         <div class="author-info">
                             <h4>Mariana Silva</h4>
                             <p>Personal Trainer</p>
@@ -830,13 +787,15 @@
     <!-- CTA -->
     <section class="cta" id="contact">
         <div class="container">
-            <h2>Ainda com dúvidas?</h2>
-            <p>Fale com nossos especialistas e descubra como podemos criar o site perfeito para você</p>
+            <h2>Pronto para transformar sua presença online?</h2>
+            <p>Entre em contato agora mesmo para discutirmos seu projeto e receber um orçamento personalizado</p>
             <div class="button-group">
                 <button class="cta-button" onclick="window.location.href='https://wa.me/5518997330574?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20sites'">
                     Falar com Especialista
                 </button>
-                
+                <button class="cta-button secondary" onclick="window.location.href='#budget'">
+                    Como Funciona
+                </button>
             </div>
         </div>
     </section>
@@ -851,21 +810,15 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: #25D366; /* Cor do WhatsApp */
+    background-color: #25D366;
     color: white;
-    padding: 30px; /* MUITO maior a área clicável */
-    border-radius: 50%; /* Mantém redondo */
+    padding: 30px;
+    border-radius: 50%;
     text-decoration: none;
-    font-size: 50px; /* Ícone BEM maior */
-    box-shadow: 0 8px 12px rgba(0,0,0,0.2); /* Sombra mais forte */
+    font-size: 50px;
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
     transition: transform 0.2s ease;
 }
-
-.whatsapp-button:hover {
-    transform: scale(1.1);
-}
-
-
 
 .whatsapp-button:hover {
     transform: scale(1.1);
@@ -892,7 +845,7 @@
                     <ul class="footer-links">
                         <li><a href="#features">Vantagens</a></li>
                         <li><a href="#portfolio">Portfólio</a></li>
-                        <li><a href="#pricing">Preços</a></li>
+                        <li><a href="#budget">Orçamento</a></li>
                         <li><a href="#testimonials">Depoimentos</a></li>
                     </ul>
                 </div>
@@ -947,7 +900,7 @@
         
         // Animação ao rolar
         const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.feature-card, .portfolio-item, .testimonial-card');
+            const elements = document.querySelectorAll('.feature-card, .portfolio-item, .testimonial-card, .budget-step');
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
@@ -962,7 +915,7 @@
         
         // Adiciona opacidade inicial para animação
         window.addEventListener('load', () => {
-            const elements = document.querySelectorAll('.feature-card, .portfolio-item, .testimonial-card');
+            const elements = document.querySelectorAll('.feature-card, .portfolio-item, .testimonial-card, .budget-step');
             elements.forEach(element => {
                 element.style.opacity = '0';
                 element.style.transform = 'translateY(20px)';
