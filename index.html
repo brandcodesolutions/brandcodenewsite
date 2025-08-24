@@ -3,47 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sites Profissionais - Orçamento Personalizado</title>
+    <title>Sites por Assinatura - Solução Completa para Seu Negócio Digital</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Meta Pixel Code -->
-<script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '613446484098561');
-    fbq('track', 'PageView');
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '613446484098561');
+        fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=613446484098561&ev=PageView&noscript=1"
+        src="https://www.facebook.com/tr?id=613446484098561&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
     <style>
         :root {
-            --primary: #1e3a8a;
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
             --primary-light: #3b82f6;
-            --secondary: #1e40af;
+            --secondary: #1e3a8a;
             --accent: #60a5fa;
             --light: #eff6ff;
             --dark: #1e1e1e;
             --gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            --gradient-dark: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
         
         body {
             background-color: #f8fafc;
             color: #334155;
-            line-height: 1.6;
+            line-height: 1.7;
+            overflow-x: hidden;
         }
         
         .container {
@@ -54,14 +64,20 @@
         
         /* Header */
         header {
-            background: var(--gradient);
-            color: white;
+            background: white;
+            color: var(--dark);
             padding: 20px 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        header.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
         }
         
         nav {
@@ -75,11 +91,12 @@
             font-weight: 700;
             display: flex;
             align-items: center;
+            color: var(--primary);
         }
         
-        .logo i {
+        .logo img {
+            height: 40px;
             margin-right: 10px;
-            color: var(--accent);
         }
         
         .nav-links {
@@ -92,59 +109,100 @@
         }
         
         .nav-links a {
-            color: white;
+            color: var(--dark);
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            position: relative;
         }
         
         .nav-links a:hover {
-            color: var(--accent);
+            color: var(--primary);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
         }
         
         .menu-toggle {
             display: none;
             cursor: pointer;
             font-size: 24px;
+            color: var(--primary);
         }
         
         /* Hero Section */
         .hero {
-            background: var(--gradient);
+            background: var(--gradient-dark);
             color: white;
-            padding: 150px 0 100px;
+            padding: 180px 0 100px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
-            font-weight: 800;
+            font-weight: 700;
+            line-height: 1.2;
         }
         
         .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
+            font-size: 1.25rem;
             margin: 0 auto 40px;
+            opacity: 0.9;
+            max-width: 700px;
         }
         
         .cta-button {
             background-color: white;
             color: var(--primary);
             border: none;
-            padding: 15px 40px;
+            padding: 16px 45px;
             font-size: 1.1rem;
             font-weight: 600;
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            box-shadow: var(--shadow);
             margin: 0 10px;
+            display: inline-block;
         }
         
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-lg);
             background-color: var(--accent);
             color: white;
         }
@@ -164,29 +222,46 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 20px;
+            margin-top: 30px;
+            gap: 15px;
         }
         
         /* Features */
         .features {
-            padding: 80px 0;
+            padding: 100px 0;
+            background-color: white;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
         
         .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
+            font-size: 2.75rem;
+            color: var(--primary-dark);
             margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
         }
         
         .section-title p {
             color: #64748b;
             max-width: 700px;
             margin: 0 auto;
+            font-size: 1.1rem;
         }
         
         .features-grid {
@@ -197,16 +272,18 @@
         
         .feature-card {
             background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
             text-align: center;
+            border: 1px solid #e2e8f0;
         }
         
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
         }
         
         .feature-icon {
@@ -217,47 +294,234 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
+            margin: 0 auto 25px;
             color: white;
-            font-size: 30px;
+            font-size: 32px;
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
         }
         
         .feature-card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+        
+        .feature-card p {
+            color: #64748b;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+            background-color: var(--light);
+            position: relative;
+        }
+        
+        .pricing:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: white;
+            clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+        }
+        
+        .pricing:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: white;
+            clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid var(--primary);
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 30px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transform: rotate(45deg);
+            width: 120px;
+            text-align: center;
+        }
+        
+        .pricing-header {
+            padding: 40px 30px;
+            text-align: center;
+            background: var(--light);
+            border-bottom: 1px solid #e2e8f0;
+            position: relative;
+        }
+        
+        .pricing-header h3 {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .price {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        
+        .currency {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--dark);
+            margin-top: 5px;
+        }
+        
+        .amount {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 0 5px;
             color: var(--primary);
+            line-height: 1;
+        }
+        
+        .period {
+            font-size: 1rem;
+            color: #64748b;
+            align-self: flex-end;
+            margin-bottom: 8px;
+        }
+        
+        .setup-fee {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 10px;
+        }
+        
+        .pricing-features {
+            padding: 30px;
+        }
+        
+        .pricing-features ul {
+            list-style: none;
+        }
+        
+        .pricing-features li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            color: #475569;
+        }
+        
+        .pricing-features i {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 0.9rem;
+            min-width: 20px;
+        }
+        
+        .pricing-button {
+            display: block;
+            width: calc(100% - 60px);
+            margin: 0 auto 30px;
+            text-align: center;
+            padding: 15px;
+            font-weight: 600;
+            border-radius: 8px;
+        }
+        
+        .featured .pricing-button {
+            background: var(--gradient);
+            color: white;
+        }
+        
+        .pricing-footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #64748b;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .pricing-footer p {
+            margin-bottom: 10px;
         }
         
         /* Portfolio */
         .portfolio {
-            padding: 80px 0;
-            background-color: #f1f5f9;
+            padding: 100px 0;
+            background-color: white;
         }
         
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 25px;
             margin-top: 40px;
         }
         
         .portfolio-item {
             position: relative;
-            border-radius: 10px;
+            border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            aspect-ratio: 16/9;
         }
         
         .portfolio-item:hover {
             transform: scale(1.03);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: var(--shadow-lg);
         }
         
         .portfolio-img {
             width: 100%;
-            height: 250px;
+            height: 100%;
             object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.1);
         }
         
         .portfolio-overlay {
@@ -267,9 +531,9 @@
             right: 0;
             background: rgba(30, 58, 138, 0.9);
             color: white;
-            padding: 20px;
+            padding: 25px;
             transform: translateY(100%);
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
         
         .portfolio-item:hover .portfolio-overlay {
@@ -278,77 +542,53 @@
         
         .portfolio-overlay h3 {
             margin-bottom: 10px;
-        }
-        
-        /* Budget Section */
-        .budget {
-            padding: 80px 0;
-            text-align: center;
-            background-color: white;
-        }
-        
-        .budget-steps {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .budget-step {
-            flex: 1;
-            min-width: 250px;
-            max-width: 350px;
-            background: #f8fafc;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            position: relative;
-        }
-        
-        .step-number {
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-        
-        .budget-step h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
+            font-size: 1.3rem;
         }
         
         /* Testimonials */
         .testimonials {
-            padding: 80px 0;
-            background-color: #f1f5f9;
+            padding: 100px 0;
+            background-color: var(--light);
+            position: relative;
         }
         
         .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            margin-top: 50px;
         }
         
         .testimonial-card {
             background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: var(--light);
+            font-family: Georgia, serif;
+            line-height: 1;
+            z-index: 0;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
         }
         
         .testimonial-text {
             font-style: italic;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            color: #475569;
+            font-size: 1.05rem;
         }
         
         .testimonial-author {
@@ -357,15 +597,16 @@
         }
         
         .author-img {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             object-fit: cover;
             margin-right: 15px;
+            border: 3px solid var(--light);
         }
         
         .author-info h4 {
-            color: var(--primary);
+            color: var(--primary-dark);
             margin-bottom: 5px;
         }
         
@@ -374,23 +615,101 @@
             font-size: 0.9rem;
         }
         
+        /* FAQ */
+        .faq {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .faq-question {
+            background: var(--light);
+            color: var(--primary-dark);
+            padding: 20px 25px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .faq-question i {
+            transition: var(--transition);
+        }
+        
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: white;
+        }
+        
+        .faq-answer-content {
+            padding: 25px;
+        }
+        
         /* CTA */
         .cta {
-            padding: 100px 0;
-            background: var(--gradient);
+            padding: 120px 0;
+            background: var(--gradient-dark);
             color: white;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .cta h2 {
-            font-size: 2.5rem;
+            font-size: 2.75rem;
             margin-bottom: 20px;
+            line-height: 1.2;
         }
         
         .cta p {
             max-width: 700px;
             margin: 0 auto 40px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            opacity: 0.9;
         }
         
         /* WhatsApp Button */
@@ -407,15 +726,16 @@
             align-items: center;
             justify-content: center;
             font-size: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             z-index: 999;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             animation: pulse 2s infinite;
         }
         
         .whatsapp-button:hover {
             background-color: #128C7E;
             transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
         
         @keyframes pulse {
@@ -434,20 +754,47 @@
         footer {
             background-color: var(--dark);
             color: white;
-            padding: 60px 0 20px;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+        
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: white;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
         }
         
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
         }
         
         .footer-col h3 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
             color: var(--accent);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient);
+            bottom: 0;
+            left: 0;
+            border-radius: 3px;
         }
         
         .footer-links {
@@ -455,22 +802,31 @@
         }
         
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         
         .footer-links a {
             color: #cbd5e1;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            display: inline-block;
         }
         
         .footer-links a:hover {
             color: var(--accent);
+            transform: translateX(5px);
+        }
+        
+        .footer-links i {
+            margin-right: 8px;
+            width: 20px;
+            text-align: center;
         }
         
         .social-links {
             display: flex;
             gap: 15px;
+            margin-top: 20px;
         }
         
         .social-links a {
@@ -482,7 +838,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
         
         .social-links a:hover {
@@ -492,24 +848,45 @@
         
         .copyright {
             text-align: center;
-            padding-top: 20px;
+            padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #94a3b8;
             font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
         }
         
         /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            
+            .pricing-card.featured:hover {
+                transform: scale(1) translateY(-10px);
+            }
+        }
+        
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
                 top: 80px;
                 left: -100%;
-                background: var(--primary);
+                background: white;
                 width: 100%;
                 flex-direction: column;
                 align-items: center;
-                padding: 20px 0;
+                padding: 30px 0;
                 transition: all 0.5s ease;
+                box-shadow: var(--shadow-lg);
             }
             
             .nav-links.active {
@@ -524,12 +901,20 @@
                 display: block;
             }
             
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
             }
             
             .section-title h2 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .button-group {
@@ -538,18 +923,18 @@
             }
             
             .cta-button {
-                margin: 5px 0;
+                margin: 8px 0;
                 width: 100%;
                 max-width: 300px;
             }
             
-            .budget-steps {
-                flex-direction: column;
-                align-items: center;
+            .pricing-grid {
+                grid-template-columns: 1fr;
             }
             
-            .budget-step {
-                width: 100%;
+            .pricing-card {
+                max-width: 400px;
+                margin: 0 auto;
             }
             
             .whatsapp-button {
@@ -560,23 +945,42 @@
                 right: 20px;
             }
         }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta h2 {
+                font-size: 2rem;
+            }
+            
+            .amount {
+                font-size: 3rem;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header id="header">
         <div class="container">
             <nav>
-                <div class="logo" style="display: flex; align-items: center;">
-                    <img src="img/B branco.png" alt="Logo" style="height: 50px; width: auto;"/>
+                <div class="logo">
+                    <img src="img/B azul (1).png" alt="Logo BrandCode" style="height: 40px;">
+                    <span></span>
                 </div>
                 
                 <ul class="nav-links">
                     <li><a href="#features">Vantagens</a></li>
+                    <li><a href="#pricing">Planos</a></li>
                     <li><a href="#portfolio">Portfólio</a></li>
-                    <li><a href="#budget">Orçamento</a></li>
                     <li><a href="#testimonials">Depoimentos</a></li>
-                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="#faq">Dúvidas</a></li>
                 </ul>
                 <div class="menu-toggle">
                     <i class="fas fa-bars"></i>
@@ -587,16 +991,16 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <h1>Sites Profissionais Sob Medida</h1>
-            <p>Desenvolvemos a solução perfeita para o seu negócio com design exclusivo e tecnologia de ponta</p>
+        <div class="hero-content">
+            <h1>Seu Site Profissional por Assinatura</h1>
+            <p>Tenha um site incrível sem investimento inicial. Domínio grátis, design exclusivo e tudo que sua empresa precisa para se destacar online.</p>
             
             <div class="button-group">
-                <button class="cta-button" onclick="window.location.href='#budget'">
-                    Solicitar Orçamento
+                <button class="cta-button" onclick="window.location.href='#pricing'">
+                    Ver Planos
                 </button>
-                <button class="cta-button secondary" onclick="window.location.href='#portfolio'">
-                    Ver Portfólio
+                <button class="cta-button secondary" onclick="window.location.href='https://wa.me/5518997330574?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20sites%20por%20assinatura'">
+                    Falar com Especialista
                 </button>
             </div>
         </div>
@@ -606,14 +1010,20 @@
     <section class="features" id="features">
         <div class="container">
             <div class="section-title">
-                <h2>Por que escolher nossos sites?</h2>
-                <p>Todos os nossos projetos são desenvolvidos com as melhores tecnologias para seu negócio se destacar na internet</p>
+                <h2>Seu Negócio Merece o Melhor</h2>
+                <p>Todos os nossos sites incluem essas vantagens para você ter a melhor presença digital</p>
             </div>
             <div class="features-grid">
-               
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>100% Responsivo</h3>
+                    <p>Perfeito em qualquer dispositivo: celular, tablet ou computador.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tachometer-alt"></i>
                     </div>
                     <h3>Super Rápido</h3>
                     <p>Otimizado para carregamento ultrarrápido, melhorando sua taxa de conversão.</p>
@@ -636,141 +1046,228 @@
                     <div class="feature-icon">
                         <i class="fas fa-headset"></i>
                     </div>
-                    <h3>Suporte Personalizado</h3>
-                    <p>Equipe especializada para te ajudar no que precisar.</p>
+                    <h3>Suporte 24/7</h3>
+                    <p>Equipe especializada para te ajudar no que precisar, a qualquer hora.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-sync-alt"></i>
                     </div>
-                    <h3>Integrações</h3>
-                    <p>WhatsApp, redes sociais, Google Analytics e muito mais.</p>
+                    <h3>Atualizações Constantes</h3>
+                    <p>Seu site sempre com as melhores tecnologias e recursos.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Planos que Cabem no Seu Bolso</h2>
+                <p>Escolha a solução perfeita para o seu negócio com domínio .com.br gratuito</p>
+            </div>
+            <div class="pricing-grid">
+                <!-- Plano Básico -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Plano Básico</h3>
+                        <div class="price">
+                            <span class="currency">R$</span>
+                            <span class="amount">59</span>
+                            <span class="period">/mês</span>
+                        </div>
+                        <p class="setup-fee">+ Taxa de criação: R$199 (única)</p>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> 1 Página exclusiva</li>
+                            <li><i class="fas fa-check"></i> Design responsivo</li>
+                            <li><i class="fas fa-check"></i> Domínio .com.br grátis</li>
+                            <li><i class="fas fa-check"></i> Hospedagem premium</li>
+                            <li><i class="fas fa-check"></i> Certificado SSL</li>
+                            <li><i class="fas fa-check"></i> Suporte por e-mail</li>
+                            <li><i class="fas fa-check"></i> Formulário de contato</li>
+                            <li><i class="fas fa-check"></i> 1 conta de e-mail</li>
+                            <li><i class="fas fa-check"></i>Até uma alteração mensal</li>
+                        </ul>
+                    </div>
+                    <button class="cta-button pricing-button" onclick="window.location.href='https://wa.me/5518997330574?text=Olá,%20quero%20assinar%20o%20Plano%20Básico'">
+                        Assinar Agora
+                    </button>
+                </div>
+                
+                <!-- Plano Empresarial -->
+                <div class="pricing-card featured">
+                    <div class="popular-badge">MAIS POPULAR</div>
+                    <div class="pricing-header">
+                        <h3>Plano Empresarial</h3>
+                        <div class="price">
+                            <span class="currency">R$</span>
+                            <span class="amount">90</span>
+                            <span class="period">/mês</span>
+                        </div>
+                        <p class="setup-fee">+ Taxa de criação: R$199 (única)</p>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Até 6 páginas exclusivas</li>
+                            <li><i class="fas fa-check"></i> Design responsivo premium</li>
+                            <li><i class="fas fa-check"></i> Domínio .com.br grátis</li>
+                            <li><i class="fas fa-check"></i> Hospedagem turbo</li>
+                            <li><i class="fas fa-check"></i> Certificado SSL</li>
+                            <li><i class="fas fa-check"></i> Suporte prioritário</li>
+                            <li><i class="fas fa-check"></i> Formulário de contato</li>
+                            <li><i class="fas fa-check"></i> 3 contas de e-mail</li>
+                            <li><i class="fas fa-check"></i> SEO básico</li>
+                            <li><i class="fas fa-check"></i> Integração com WhatsApp</li>
+                            <li><i class="fas fa-check"></i>Até 2 alterações mensal</li>
+                            
+                        </ul>
+                    </div>
+                    <button class="cta-button pricing-button" onclick="window.location.href='https://wa.me/5518997330574?text=Olá,%20quero%20assinar%20o%20Plano%20Empresarial'">
+                        Assinar Agora
+                    </button>
+                </div>
+                
+                <!-- Plano Premium -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Plano Premium</h3>
+                        <div class="price">
+                            <span class="currency">R$</span>
+                            <span class="amount">150</span>
+                            <span class="period">/mês</span>
+                        </div>
+                        <p class="setup-fee">+ Taxa de criação: R$299 (única)</p>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Até 10 páginas exclusivas</li>
+                            <li><i class="fas fa-check"></i> Design premium personalizado</li>
+                            <li><i class="fas fa-check"></i> Domínio .com.br grátis</li>
+                            <li><i class="fas fa-check"></i> Hospedagem turbo SSD</li>
+                            <li><i class="fas fa-check"></i> Certificado SSL</li>
+                            <li><i class="fas fa-check"></i> Suporte 24/7</li>
+                            <li><i class="fas fa-check"></i> 5 contas de e-mail</li>
+                            <li><i class="fas fa-check"></i> Google Analytics</li>
+                            <li><i class="fas fa-check"></i> Google Meu Negócio</li>
+                            <li><i class="fas fa-check"></i> SEO avançado</li>
+                            <li><i class="fas fa-check"></i> Integração completa</li>
+                            <li><i class="fas fa-check"></i> Backup diário</li>
+                            <li><i class="fas fa-check"></i> Relatório mensal</li>
+                            <li><i class="fas fa-check"></i>Até 4 alteração mensal</li>
+                        </ul>
+                    </div>
+                    <button class="cta-button pricing-button" onclick="window.location.href='https://wa.me/5518997330574?text=Olá,%20quero%20assinar%20o%20Plano%20Premium'">
+                        Assinar Agora
+                    </button>
+                </div>
+            </div>
+            
+            <div class="pricing-footer">
+                <p>Todos os planos incluem: atualizações periódicas, backup diário e garantia de 99,9% de disponibilidade.</p>
+                <p>Sem fidelidade - cancele quando quiser.</p>
             </div>
         </div>
     </section>
 
     <!-- Portfolio -->
-    <section class="portfolio" id="portfolio">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nosso Portfólio</h2>
-                <p>Confira alguns dos sites que já desenvolvemos para nossos clientes</p>
+    <!-- Portfolio -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <div class="section-title">
+            <h2>Nossos Trabalhos</h2>
+            <p>Confira alguns dos sites que já desenvolvemos para nossos clientes</p>
+        </div>
+        <div class="portfolio-grid">
+            <!-- Item 1 -->
+            <div class="portfolio-item">
+                <img src="img/1000626148.jpg" alt="Clínica Médica" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Clínica Médica</h3>
+                    <p>Site profissional com agendamento online e área de pacientes</p>
+                    <a href="https://www.azzulmedicina.com.br/" class="cta-button" style="margin-top: 15px; display: inline-block; padding: 10px 25px; font-size: 0.9rem;">Ver Site</a>
+                </div>
             </div>
-            <div class="portfolio-grid">
-                <!-- Item 1 -->
-                <div class="portfolio-item">
-                    <img src="img/1000626148.jpg" alt="Site 1" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Clínica Médica</h3>
-                        <p>Site profissional com agendamento online e área de pacientes</p>
-                        <a href="https://www.azzulmedicina.com.br/" class="cta-button" style="margin-top: 10px; display: inline-block;">Acesse</a>
-                    </div>
+            <!-- Item 2 -->
+            <div class="portfolio-item">
+                <img src="img/1000626142.jpg" alt="Construtora" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Construtora</h3>
+                    <p>Site profissional de engenharia civil</p>
+                    <a href="https://www.engesol.net/construcao.html" class="cta-button" style="margin-top: 15px; display: inline-block; padding: 10px 25px; font-size: 0.9rem;">Ver Site</a>
                 </div>
-                <!-- Item 2 -->
-                <div class="portfolio-item">
-                    <img src="img/1000626142.jpg" alt="Site 2" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Construtora</h3>
-                        <p>Site profissional de engenharia</p>
-                        <a href="https://www.engesol.net/construcao.html" class="cta-button" style="margin-top: 10px; display: inline-block;">Acesse</a>
-                    </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="portfolio-item">
+                <img src="img/1000626144.jpg" alt="Psicóloga" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Psicóloga</h3>
+                    <p>Site institucional com blog integrado</p>
+                    <a href="https://www.wallidasantospsicologa.com.br/" class="cta-button" style="margin-top: 15px; display: inline-block; padding: 10px 25px; font-size: 0.9rem;">Ver Site</a>
                 </div>
-                <!-- Item 3 -->
-                <div class="portfolio-item">
-                    <img src="img/1000626144.jpg" alt="Site 3" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Psicóloga</h3>
-                        <p>Site Institucional/Landing Page</p>
-                        <a href="https://www.wallidasantospsicologa.com.br/" class="cta-button" style="margin-top: 10px; display: inline-block;">Acesse</a>
-                    </div>
-                </div>
-                <!-- Item 4 -->
-                <div class="portfolio-item">
-                    <img src="img/1000626146.jpg" alt="Site 4" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Agencia de Viagens</h3>
-                        <p>Site profissional formulário de contato</p>
-                        <a href="https://www.heyviagens.com.br/" class="cta-button" style="margin-top: 10px; display: inline-block;">Acesse</a>
-                    </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="portfolio-item">
+                <img src="img/1000626146.jpg" alt="Agência de Viagens" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Agência de Viagens</h3>
+                    <p>Site profissional com formulário de contato</p>
+                    <a href="https://www.heyviagens.com.br/" class="cta-button" style="margin-top: 15px; display: inline-block; padding: 10px 25px; font-size: 0.9rem;">Ver Site</a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Budget Section -->
-    <section class="budget" id="budget">
-        <div class="container">
-            <div class="section-title">
-                <h2>Como funciona nosso orçamento</h2>
-                <p>Desenvolvemos soluções personalizadas para cada necessidade</p>
-            </div>
-            <div class="budget-steps">
-                <div class="budget-step">
-                    <div class="step-number">1</div>
-                    <h3>Nos conte sobre seu projeto</h3>
-                    <p>Entre em contato e nos conte sobre seu negócio, necessidades e objetivos para o site.</p>
-                </div>
-                <div class="budget-step">
-                    <div class="step-number">2</div>
-                    <h3>Análise e proposta</h3>
-                    <p>Analisamos seu caso e elaboramos uma proposta personalizada com escopo, prazos e investimento.</p>
-                </div>
-                <div class="budget-step">
-                    <div class="step-number">3</div>
-                    <h3>Desenvolvimento</h3>
-                    <p>Após aprovação, iniciamos o desenvolvimento com acompanhamento em todas as etapas.</p>
-                </div>
-            </div>
-            <div style="margin-top: 50px;">
-                <button class="cta-button" onclick="window.location.href='https://wa.me/5518997330574?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20um%20site'">
-                    Solicitar Orçamento
-                </button>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 
     <!-- Testimonials 
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-title">
-                <h2>O que nossos clientes dizem</h2>
-                <p>Veja a opinião de quem já contratou nossos serviços</p>
+                <h2>O Que Nossos Clientes Dizem</h2>
+                <p>Veja a opinião de quem já transformou seu negócio com nossos sites</p>
             </div>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "Meu site ficou incrível! A equipe foi muito atenciosa e o resultado superou minhas expectativas. Minhas vendas aumentaram 40% depois que o site entrou no ar."
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Cliente 1" class="author-img">
-                        <div class="author-info">
-                            <h4>Ana Carolina</h4>
-                            <p>Loja de Moda Feminina</p>
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            "Finalmente encontrei uma solução acessível para ter um site profissional. O atendimento foi excelente e o resultado superou minhas expectativas. Minhas vendas aumentaram 40% depois que o site entrou no ar."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Cliente 1" class="author-img">
+                            <div class="author-info">
+                                <h4>Ana Carolina</h4>
+                                <p>Loja de Moda Feminina</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "Profissionalismo e qualidade impressionantes. O site ficou exatamente como eu queria e o melhor: apareceu na primeira página do Google em menos de 2 meses!"
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Cliente 2" class="author-img">
-                        <div class="author-info">
-                            <h4>Carlos Eduardo</h4>
-                            <p>Clínica Odontológica</p>
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            "Profissionalismo e qualidade impressionantes. O site ficou exatamente como eu queria e o melhor: apareceu na primeira página do Google em menos de 2 meses! O plano por assinatura foi a melhor decisão."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Cliente 2" class="author-img">
+                            <div class="author-info">
+                                <h4>Carlos Eduardo</h4>
+                                <p>Clínica Odontológica</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "Não poderia estar mais satisfeito! O atendimento foi excelente e o site ficou perfeito. Agora meus clientes conseguem agendar horários online, o que facilitou muito meu trabalho."
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Cliente 3" class="author-img">
-                        <div class="author-info">
-                            <h4>Mariana Silva</h4>
-                            <p>Personal Trainer</p>
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            "Não poderia estar mais satisfeita! O atendimento foi excelente e o site ficou perfeito. Agora meus clientes conseguem agendar horários online, o que facilitou muito meu trabalho. E o melhor: sem custo inicial!"
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Cliente 3" class="author-img">
+                            <div class="author-info">
+                                <h4>Mariana Silva</h4>
+                                <p>Personal Trainer</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -778,55 +1275,105 @@
         </div>
     </section>-->
 
-    <!-- CTA -->
-    <section class="cta" id="contact">
+    <!-- FAQ -->
+    <section class="faq" id="faq">
         <div class="container">
-            <h2>Pronto para transformar sua presença online?</h2>
-            <p>Entre em contato agora mesmo para discutirmos seu projeto e receber um orçamento personalizado</p>
+            <div class="section-title">
+                <h2>Dúvidas Frequentes</h2>
+                <p>Tire suas principais dúvidas sobre nossos planos de assinatura</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Como funciona a taxa de criação de ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>A taxa de criação de é um valor único que cobre todo o desenvolvimento inicial do seu site, incluindo design personalizado, configuração do domínio, hospedagem e integrações básicas. Após o pagamento desta taxa, você começa a pagar apenas a mensalidade do plano escolhido.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Posso cancelar quando quiser?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Sim! Não temos fidelidade em nenhum de nossos planos. Você pode cancelar a qualquer momento sem multa ou taxa adicional. Caso queira retornar, basta nos avisar e reiniciaremos seu plano.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>O domínio .com.br é realmente gratuito?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Sim! Nós registramos e renovamos seu domínio .com.br gratuitamente enquanto você estiver com o plano ativo. Caso cancele, você pode optar por transferir o domínio para outro provedor ou deixar que ele expire.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quanto tempo leva para meu site ficar pronto?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>O prazo médio é de 7 a 10 dias úteis após a aprovação do design e envio de todo o conteúdo necessário. Planos mais complexos podem levar até 15 dias. Garantimos que vale a pena esperar pelo resultado final!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Posso fazer alterações no meu site depois de pronto?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Sim! Todos os planos incluem alterações mensais. Alterações no escopo do site podem ser solicitadas por um valor adicional No plano Premium, você tem 5 alterações mensais gratuitas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Pronto para Transformar Seu Negócio?</h2>
+            <p>Comece hoje mesmo com um site profissional por um preço que cabe no seu orçamento</p>
             <div class="button-group">
-                <button class="cta-button" onclick="window.location.href='https://wa.me/5518997330574?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20sites'">
-                    Falar com Especialista
+                <button class="cta-button" onclick="window.location.href='#pricing'">
+                    Escolher Plano
                 </button>
-                <button class="cta-button secondary" onclick="window.location.href='#budget'">
-                    Como Funciona
+                <button class="cta-button secondary" onclick="window.location.href='https://wa.me/5518997330574?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20sites%20por%20assinatura'">
+                    Falar com Especialista
                 </button>
             </div>
         </div>
     </section>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/5518997330574?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20sites" class="whatsapp-button" target="_blank">
+    <a href="https://wa.me/5518997330574?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20sites%20por%20assinatura" class="whatsapp-button" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
-
-    <style>
-       .whatsapp-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #25D366;
-    color: white;
-    padding: 30px;
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 50px;
-    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
-    transition: transform 0.2s ease;
-}
-
-.whatsapp-button:hover {
-    transform: scale(1.1);
-}
-
-    </style>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3>BrandCode Solutions</h3>
-                    <p>Criamos sites profissionais que geram resultados reais para seu negócio.</p>
+                    <h3>BrandCode</h3>
+                    <p style="color: #cbd5e1; margin-bottom: 20px;">Criamos sites profissionais que geram resultados reais para seu negócio.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -837,27 +1384,29 @@
                 <div class="footer-col">
                     <h3>Links Rápidos</h3>
                     <ul class="footer-links">
-                        <li><a href="#features">Vantagens</a></li>
-                        <li><a href="#portfolio">Portfólio</a></li>
-                        <li><a href="#budget">Orçamento</a></li>
-                        <li><a href="#testimonials">Depoimentos</a></li>
+                        <li><a href="#features"><i class="fas fa-chevron-right"></i> Vantagens</a></li>
+                        <li><a href="#pricing"><i class="fas fa-chevron-right"></i> Planos</a></li>
+                        <li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Portfólio</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Depoimentos</a></li>
+                        <li><a href="#faq"><i class="fas fa-chevron-right"></i> Dúvidas</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>Serviços</h3>
+                    <h3>Planos</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Sites Institucionais</a></li>
-                        <li><a href="#">Lojas Virtuais</a></li>
-                        <li><a href="#">Landing Pages</a></li>
-                        <li><a href="#">Blogs Profissionais</a></li>
+                        <li><a href="#pricing"><i class="fas fa-chevron-right"></i> Plano Básico</a></li>
+                        <li><a href="#pricing"><i class="fas fa-chevron-right"></i> Plano Empresarial</a></li>
+                        <li><a href="#pricing"><i class="fas fa-chevron-right"></i> Plano Premium</a></li>
+                        <li><a href="#pricing"><i class="fas fa-chevron-right"></i> Comparar Planos</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Contato</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-phone-alt"></i> (18) 99733-0574</li>
-                        <li><i class="fas fa-envelope"></i> brandcodesolutions@gmail.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> São Paulo</li>
+                        <li><a href="tel:+5518997330574"><i class="fas fa-phone-alt"></i> (18) 99733-0574</a></li>
+                        <li><a href="mailto:brandcodesolutions@gmail.com"><i class="fas fa-envelope"></i> brandcodesolutions@gmail.com</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> São Paulo - SP</li>
+                        <li><a href="https://wa.me/5518997330574" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
                     </ul>
                 </div>
             </div>
@@ -871,9 +1420,21 @@
         // Menu Mobile
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
+        const header = document.getElementById('header');
         
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            menuToggle.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         });
         
         // Smooth Scroll
@@ -888,13 +1449,36 @@
                 // Fechar menu mobile após clicar
                 if(navLinks.classList.contains('active')) {
                     navLinks.classList.remove('active');
+                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+        
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = question.classList.contains('active');
+                
+                // Fechar todas as outras respostas
+                faqQuestions.forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.style.maxHeight = null;
+                });
+                
+                // Abrir a resposta clicada se não estiver ativa
+                if (!isActive) {
+                    question.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
                 }
             });
         });
         
         // Animação ao rolar
         const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.feature-card, .portfolio-item, .testimonial-card, .budget-step');
+            const elements = document.querySelectorAll('.feature-card, .portfolio-item, .testimonial-card, .pricing-card, .faq-item');
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
@@ -909,7 +1493,7 @@
         
         // Adiciona opacidade inicial para animação
         window.addEventListener('load', () => {
-            const elements = document.querySelectorAll('.feature-card, .portfolio-item, .testimonial-card, .budget-step');
+            const elements = document.querySelectorAll('.feature-card, .portfolio-item, .testimonial-card, .pricing-card, .faq-item');
             elements.forEach(element => {
                 element.style.opacity = '0';
                 element.style.transform = 'translateY(20px)';
@@ -924,8 +1508,7 @@
         
         // WhatsApp Button Tracking
         document.querySelector('.whatsapp-button').addEventListener('click', function() {
-            // Aqui você pode adicionar código de tracking (Google Analytics, Facebook Pixel, etc.)
-            console.log('WhatsApp button clicked');
+            fbq('track', 'Contact');
         });
     </script>
 </body>
