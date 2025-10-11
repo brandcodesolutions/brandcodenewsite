@@ -1,689 +1,326 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <!-- Favicon padrão -->
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-16x16.png">
-
-    <!-- Para navegadores antigos e compatibilidade -->
-    <link rel="shortcut icon" href="img/favicon-16x16.png" type="image/png">
-
-    <!-- Para iOS (Apple Touch Icon) -->
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon-16x16.png">
-
-    <!-- Tema da barra de endereço no mobile -->
-    <meta name="theme-color" content="#000000">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17504925022"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'AW-17504925022');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrandCode - Desenvolvimento de Sites Profissionais</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <!-- Meta Pixel Code -->
-    <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
-                n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '613446484098561');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=613446484098561&ev=PageView&noscript=1" /></noscript>
-    <!-- End Meta Pixel Code -->
+    <title>Serviços Profissionais | Soluções Personalizadas</title>
     <style>
         :root {
-            --primary: #000000;
-            /* Preto como cor principal */
-            --primary-dark: #0a0a0a;
-            /* Preto mais escuro */
-            --primary-light: #1e40af;
-            /* Azul escuro */
-            --secondary: #2563eb;
-            /* Azul médio */
-            --accent: #3b82f6;
-            /* Azul mais claro */
-            --light: #f3f4f6;
-            /* Cinza muito claro */
-            --dark: #111827;
-            /* Quase preto */
-            --text: #374151;
-            /* Cinza escuro para texto */
-            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            --gradient-dark: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
-            --radius: 12px;
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --transition: all 0.3s ease;
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        
         body {
-            background-color: #000000;
-            color: var(--text);
-            line-height: 1.7;
-            overflow-x: hidden;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
         }
-
+        
         .container {
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
-
+        
         /* Header */
         header {
-            background: white;
-            color: var(--dark);
-            padding: 20px 0;
-            box-shadow: var(--shadow);
-            position: fixed;
-            width: 100%;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
             top: 0;
             z-index: 1000;
-            transition: var(--transition);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-
-        header.scrolled {
-            padding: 15px 0;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        nav {
+        
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
+        
         .logo {
-            font-size: 24px;
+            font-size: 1.8rem;
             font-weight: 700;
-            display: flex;
-            align-items: center;
-            color: var(--primary);
+            color: white;
+            text-decoration: none;
         }
-
-        .logo img {
-            height: 40px;
-            margin-right: 10px;
+        
+        .logo span {
+            color: var(--secondary-color);
         }
-
-        .nav-links {
+        
+        nav ul {
             display: flex;
             list-style: none;
         }
-
-        .nav-links li {
-            margin-left: 30px;
+        
+        nav ul li {
+            margin-left: 1.5rem;
         }
-
-        .nav-links a {
-            color: var(--dark);
+        
+        nav ul li a {
+            color: white;
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition);
+            padding: 0.5rem 0;
             position: relative;
         }
-
-        .nav-links a:hover {
-            color: var(--secondary);
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
         }
-
-        .nav-links a:after {
+        
+        nav ul li a::after {
             content: '';
             position: absolute;
+            bottom: 0;
+            left: 0;
             width: 0;
             height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--secondary);
+            background-color: var(--secondary-color);
             transition: var(--transition);
         }
-
-        .nav-links a:hover:after {
+        
+        nav ul li a:hover::after {
             width: 100%;
         }
-
-        .menu-toggle {
+        
+        .mobile-menu {
             display: none;
+            font-size: 1.5rem;
             cursor: pointer;
-            font-size: 24px;
-            color: var(--primary);
         }
-
+        
         /* Hero Section */
         .hero {
-            background: var(--gradient-dark);
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 180px 0 100px;
+            padding: 6rem 0;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
-
-        .hero:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            opacity: 0.1;
-            z-index: 0;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
+        
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-            line-height: 1.2;
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
-
+        
         .hero p {
-            font-size: 1.25rem;
-            margin: 0 auto 40px;
-            opacity: 0.9;
+            font-size: 1.2rem;
             max-width: 700px;
+            margin: 0 auto 2rem;
         }
-
-        .cta-button {
-            background-color: var(--secondary);
-            color: white;
-            border: none;
-            padding: 16px 45px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-            margin: 0 10px;
+        
+        .btn {
             display: inline-block;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-            background-color: var(--primary);
-        }
-
-        .cta-button.secondary {
-            background-color: transparent;
+            background-color: var(--secondary-color);
             color: white;
-            border: 2px solid white;
-        }
-
-        .cta-button.secondary:hover {
-            background-color: white;
-            color: var(--primary);
-        }
-
-        .button-group {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 30px;
-            gap: 15px;
-        }
-
-        /* Features */
-        .features {
-            padding: 100px 0;
-            background-color: white;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 2.75rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2:after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 4px;
-            background: var(--gradient);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-
-        .section-title p {
-            color: var(--text);
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-card {
-            background: white;
-            border-radius: var(--radius);
-            padding: 40px 30px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            text-align: center;
-            border: 1px solid #e2e8f0;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent);
-        }
-
-        .feature-icon {
-            background: var(--gradient);
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            color: white;
-            font-size: 32px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-
-        .feature-card p {
-            color: var(--text);
-        }
-
-        /* Pricing Section */
-        .pricing {
-            padding: 100px 0;
-            background-color: var(--light);
-            position: relative;
-        }
-
-        .pricing:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 50px;
-            background: white;
-            clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
-        }
-
-        .pricing:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 50px;
-            background: white;
-            clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .pricing-card {
-            background: white;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            transition: var(--transition);
-            position: relative;
-            border: 1px solid #e2e8f0;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .pricing-card.featured {
-            border: 2px solid var(--primary);
-            transform: scale(1.05);
-        }
-
-        .pricing-card.featured:hover {
-            transform: scale(1.05) translateY(-10px);
-        }
-
-        .popular-badge {
-            position: absolute;
-            top: 20px;
-            right: -30px;
-            background: var(--primary);
-            color: white;
-            padding: 5px 30px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            transform: rotate(45deg);
-            width: 120px;
-            text-align: center;
-        }
-
-        .pricing-header {
-            padding: 40px 30px;
-            text-align: center;
-            background: var(--light);
-            border-bottom: 1px solid #e2e8f0;
-            position: relative;
-        }
-
-        .pricing-header h3 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
             font-weight: 600;
-        }
-
-        .price {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            margin-bottom: 10px;
-        }
-
-        .currency {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--dark);
-            margin-top: 5px;
-        }
-
-        .amount {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin: 0 5px;
-            color: var(--primary);
-            line-height: 1;
-        }
-
-        .period {
-            font-size: 1rem;
-            color: #64748b;
-            align-self: flex-end;
-            margin-bottom: 8px;
-        }
-
-        .pricing-features {
-            padding: 30px;
-        }
-
-        .pricing-features ul {
-            list-style: none;
-        }
-
-        .pricing-features li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            color: #475569;
-        }
-
-        .pricing-features i {
-            color: var(--primary);
-            margin-right: 10px;
-            font-size: 0.9rem;
-            min-width: 20px;
-        }
-
-        .pricing-button {
-            display: block;
-            width: calc(100% - 60px);
-            margin: 0 auto 30px;
-            text-align: center;
-            padding: 15px;
-            font-weight: 600;
-            border-radius: 8px;
-            background: var(--primary);
-            color: white;
+            transition: var(--transition);
             border: none;
             cursor: pointer;
-            transition: var(--transition);
         }
-
-        .pricing-button:hover {
-            background: var(--secondary);
+        
+        .btn:hover {
+            background-color: #2980b9;
             transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-
-        .featured .pricing-button {
-            background: var(--gradient);
-            color: white;
-        }
-
-        .pricing-footer {
-            text-align: center;
-            margin-top: 50px;
-            color: #64748b;
-            font-size: 0.9rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .pricing-footer p {
-            margin-bottom: 10px;
-        }
-
-        /* Portfolio */
-        .portfolio {
-            padding: 100px 0;
-            background-color: white;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .portfolio-item {
-            position: relative;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            aspect-ratio: 16/9;
-        }
-
-        .portfolio-item:hover {
-            transform: scale(1.03);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .portfolio-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .portfolio-item:hover .portfolio-img {
-            transform: scale(1.1);
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.9);
-            color: white;
-            padding: 25px;
-            transform: translateY(100%);
-            transition: var(--transition);
-        }
-
-        .portfolio-item:hover .portfolio-overlay {
-            transform: translateY(0);
-        }
-
-        .portfolio-overlay h3 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-
+        
         /* Services Section */
         .services {
-            padding: 100px 0;
-            background-color: var(--light);
+            padding: 5rem 0;
+            background-color: white;
         }
-
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            gap: 2rem;
         }
-
+        
         .service-card {
-            background: white;
-            border-radius: var(--radius);
-            padding: 40px 30px;
-            box-shadow: var(--shadow);
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: var(--transition);
-            text-align: center;
-            border: 1px solid #e2e8f0;
         }
-
+        
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
-
-        .service-icon {
-            background: var(--gradient);
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            color: white;
-            font-size: 32px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        
+        .service-img {
+            height: 200px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
         }
-
-        .service-card h3 {
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
             font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--primary);
+            margin-bottom: 1rem;
+            color: var(--primary-color);
         }
-
-        .service-card p {
-            color: var(--text);
-            margin-bottom: 20px;
+        
+        .service-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
         }
-
-        .service-price {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 20px;
+        
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background-color: var(--light-color);
         }
-
-        .service-features {
-            list-style: none;
-            margin-bottom: 25px;
-            text-align: left;
-        }
-
-        .service-features li {
-            margin-bottom: 10px;
+        
+        .about-container {
             display: flex;
             align-items: center;
+            gap: 3rem;
         }
-
-        .service-features i {
-            color: var(--primary);
-            margin-right: 10px;
-            font-size: 0.9rem;
-            min-width: 20px;
+        
+        .about-img {
+            flex: 1;
+            height: 400px;
+            background-color: #ddd;
+            border-radius: 8px;
+            background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
         }
-
-        /* FAQ */
-        .faq {
-            padding: 100px 0;
+        
+        .about-content {
+            flex: 1;
+        }
+        
+        .about-content h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+        
+        /* Pre-Briefing Section */
+        .pre-briefing {
+            padding: 5rem 0;
             background-color: white;
         }
-
+        
+        .briefing-form {
+            background-color: var(--light-color);
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 5rem 0;
+            background-color: var(--light-color);
+        }
+        
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
         }
-
+        
         .faq-item {
-            margin-bottom: 20px;
-            border-radius: var(--radius);
+            margin-bottom: 1rem;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: var(--shadow);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
         }
-
+        
         .faq-question {
-            background: var(--light);
-            color: var(--primary);
-            padding: 20px 25px;
+            background-color: white;
+            padding: 1.5rem;
             font-weight: 600;
             cursor: pointer;
             display: flex;
@@ -691,427 +328,216 @@
             align-items: center;
             transition: var(--transition);
         }
-
+        
         .faq-question:hover {
-            background: var(--primary);
-            color: white;
+            background-color: #f5f5f5;
         }
-
-        .faq-question i {
-            transition: var(--transition);
-        }
-
-        .faq-question.active i {
-            transform: rotate(180deg);
-        }
-
+        
         .faq-answer {
-            padding: 0;
+            background-color: white;
+            padding: 0 1.5rem;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            background: white;
+            transition: max-height 0.3s ease;
         }
-
-        .faq-answer-content {
-            padding: 25px;
+        
+        .faq-answer.active {
+            padding: 1.5rem;
+            max-height: 500px;
         }
-
-        /* CTA */
-        .cta {
-            padding: 120px 0;
-            background: var(--gradient-dark);
-            color: white;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+        
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background-color: white;
         }
-
-        .cta:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            opacity: 0.1;
-            z-index: 0;
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .cta h2 {
-            font-size: 2.75rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .cta p {
-            max-width: 700px;
-            margin: 0 auto 40px;
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        /* WhatsApp Button */
-        .whatsapp-button {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            z-index: 999;
-            transition: var(--transition);
-            animation: pulse 2s infinite;
-        }
-
-        .whatsapp-button:hover {
-            background-color: #128C7E;
-            transform: scale(1.1);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-
-            70% {
-                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
-
-        /* Budget Button */
-        .budget-button {
-            position: fixed;
-            bottom: 110px;
-            right: 30px;
-            background-color: var(--primary);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            z-index: 999;
-            transition: var(--transition);
-        }
-
-        .budget-button:hover {
-            background-color: var(--secondary);
-            transform: scale(1.1);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .budget-text {
-            position: absolute;
-            right: 70px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: var(--primary);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 500;
-            white-space: nowrap;
-            opacity: 0;
-            transition: var(--transition);
-            pointer-events: none;
-        }
-
-        .budget-button:hover .budget-text {
-            opacity: 1;
-            right: 75px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 80px 0 30px;
-            position: relative;
-        }
-
-        footer:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 50px;
-            background: white;
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
-        }
-
-        .footer-grid {
+        
+        .contact-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-            position: relative;
-            z-index: 1;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
         }
-
-        .footer-col h3 {
-            font-size: 1.3rem;
-            margin-bottom: 25px;
-            color: var(--accent);
-            position: relative;
-            padding-bottom: 10px;
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
         }
-
-        .footer-col h3:after {
-            content: '';
-            position: absolute;
-            width: 40px;
-            height: 3px;
-            background: var(--gradient);
-            bottom: 0;
-            left: 0;
-            border-radius: 3px;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            transition: var(--transition);
-            display: inline-block;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
-            transform: translateX(5px);
-        }
-
-        .footer-links i {
-            margin-right: 8px;
-            width: 20px;
-            text-align: center;
-        }
-
-        .social-links {
+        
+        .contact-item {
             display: flex;
-            gap: 15px;
-            margin-top: 20px;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
         }
-
-        .social-links a {
+        
+        .contact-icon {
+            background-color: var(--secondary-color);
             color: white;
-            background: rgba(255, 255, 255, 0.1);
             width: 40px;
             height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h4 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-col ul li a {
+            color: #bbb;
+            text-decoration: none;
             transition: var(--transition);
         }
-
-        .social-links a:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
+        
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
         }
-
+        
         .copyright {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #94a3b8;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #bbb;
             font-size: 0.9rem;
-            position: relative;
-            z-index: 1;
         }
-
+        
         /* Responsive */
         @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 3rem;
+            .about-container {
+                flex-direction: column;
             }
-
-            .section-title h2 {
-                font-size: 2.5rem;
-            }
-
-            .pricing-card.featured {
-                transform: scale(1);
-            }
-
-            .pricing-card.featured:hover {
-                transform: scale(1) translateY(-10px);
+            
+            .about-img {
+                width: 100%;
             }
         }
-
+        
         @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                background: white;
-                width: 100%;
-                flex-direction: column;
-                align-items: center;
-                padding: 30px 0;
-                transition: all 0.5s ease;
-                box-shadow: var(--shadow-lg);
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .nav-links li {
-                margin: 15px 0;
-            }
-
-            .menu-toggle {
+            .mobile-menu {
                 display: block;
             }
-
-            .hero {
-                padding: 150px 0 80px;
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--primary-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 2rem;
+                transition: var(--transition);
             }
-
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 1rem 0;
+            }
+            
             .hero h1 {
                 font-size: 2.5rem;
             }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-
-            .button-group {
+            
+            .form-row {
                 flex-direction: column;
-                align-items: center;
-            }
-
-            .cta-button {
-                margin: 8px 0;
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .pricing-grid,
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-card,
-            .service-card {
-                max-width: 400px;
-                margin: 0 auto;
-            }
-
-            .whatsapp-button,
-            .budget-button {
-                width: 50px;
-                height: 50px;
-                font-size: 25px;
-                bottom: 20px;
-                right: 20px;
-            }
-
-            .budget-button {
-                bottom: 90px;
-            }
-
-            .budget-text {
-                display: none;
+                gap: 0;
             }
         }
-
+        
         @media (max-width: 576px) {
+            .hero {
+                padding: 4rem 0;
+            }
+            
             .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-
-            .cta h2 {
                 font-size: 2rem;
             }
-
-            .amount {
-                font-size: 3rem;
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .briefing-form {
+                padding: 1.5rem;
             }
         }
     </style>
 </head>
-
 <body>
     <!-- Header -->
-    <header id="header">
-        <div class="container">
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Serviços<span>Pro</span></a>
+            <div class="mobile-menu">☰</div>
             <nav>
-                <div class="logo">
-                    <img src="img/B azul (1).png" alt="" style="height: 40px;">
-                    <span></span>
-                </div>
-
-                <ul class="nav-links">
+                <ul>
+                    <li><a href="#home">Início</a></li>
                     <li><a href="#services">Serviços</a></li>
-                    <li><a href="#portfolio">Portfólio</a></li>
-                    <li><a href="#pricing">Preços</a></li>
-                    <li><a href="#faq">Dúvidas</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#pre-briefing">Pré-Briefing</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contato</a></li>
                 </ul>
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Desenvolvimento de Sites Profissionais</h1>
-            <p>Criamos sites modernos e impactantes que convertem visitantes em clientes. Soluções completas para sua
-                presença digital.</p>
-
-            <div class="button-group">
-                <button class="cta-button" onclick="window.location.href='#services'">
-                    Ver Serviços
-                </button>
-                <button class="cta-button secondary"
-                    onclick="window.location.href='https://wa.me/5518997330574?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20de%20criação%20de%20site'">
-                    Falar com Especialista
-                </button>
-            </div>
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Soluções Profissionais Personalizadas</h1>
+            <p>Oferecemos serviços de alta qualidade adaptados às necessidades específicas de cada cliente. Entre em contato para uma consulta personalizada.</p>
+            <a href="#pre-briefing" class="btn">Solicitar Orçamento</a>
         </div>
     </section>
 
@@ -1120,465 +546,362 @@
         <div class="container">
             <div class="section-title">
                 <h2>Nossos Serviços</h2>
-                <p>Soluções completas para impulsionar seu negócio na internet</p>
+                <p>Conheça nossa gama completa de soluções profissionais</p>
             </div>
             <div class="services-grid">
-                <!-- Landing Page -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-window-restore"></i>
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Consultoria Estratégica</h3>
+                        <p>Análise detalhada do seu negócio com recomendações estratégicas para crescimento e otimização de processos.</p>
+                        <a href="#pre-briefing" class="btn">Mais Informações</a>
                     </div>
-                    <h3>Landing Page</h3>
-                    <p>Página única e objetiva para campanhas específicas e alta conversão</p>
-                    <div class="service-price">R$ 199</div>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Design responsivo e moderno</li>
-                        <li><i class="fas fa-check"></i> Otimizada para conversões</li>
-                        <li><i class="fas fa-check"></i> Formulário de contato integrado</li>
-                        <li><i class="fas fa-check"></i> Integração com redes sociais</li>
-                        <li><i class="fas fa-check"></i> Carregamento ultrarrápido</li>
-                    </ul>
-                    <button class="cta-button pricing-button"
-                        onclick="window.location.href='https://wa.me/5518997330574?text=Olá,%20quero%20solicitar%20uma%20Landing%20Page%20de%20R$199'">
-                        Solicitar Agora!
-                    </button>
                 </div>
-
-                <!-- Site Institucional -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-building"></i>
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Desenvolvimento de Software</h3>
+                        <p>Criação de soluções tecnológicas personalizadas para atender às necessidades específicas do seu negócio.</p>
+                        <a href="#pre-briefing" class="btn">Mais Informações</a>
                     </div>
-                    <h3>Site Institucional</h3>
-                    <p>Site completo com até 6 páginas para apresentar sua empresa</p>
-                    <div class="service-price">R$ 370</div>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Até 6 páginas personalizadas</li>
-                        <li><i class="fas fa-check"></i> Design profissional e exclusivo</li>
-                        <li><i class="fas fa-check"></i> Integração com WhatsApp</li>
-                        <li><i class="fas fa-check"></i> Galeria de imagens</li>
-                        <li><i class="fas fa-check"></i> Formulários de contato</li>
-                        <li><i class="fas fa-check"></i> SEO básico implementado</li>
-                    </ul>
-                    <button class="cta-button pricing-button"
-                        onclick="window.location.href='https://wa.me/5518997330574?text=Olá,%20quero%20solicitar%20um%20Site%20Institucional%20de%20R$370'">
-                        Solicitar Agora
-                    </button>
                 </div>
-
-                <!-- Loja Virtual -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shopping-cart"></i>
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Marketing Digital</h3>
+                        <p>Estratégias de marketing online para aumentar sua visibilidade, engajamento e conversões.</p>
+                        <a href="#pre-briefing" class="btn">Mais Informações</a>
                     </div>
-                    <h3>Loja Virtual</h3>
-                    <p>E-commerce completo para vender seus produtos online</p>
-                    <div class="service-price">Sob Consulta</div>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Catálogo de produtos ilimitado</li>
-                        <li><i class="fas fa-check"></i> Integração com meios de pagamento</li>
-                        <li><i class="fas fa-check"></i> Painel administrativo completo</li>
-                        <li><i class="fas fa-check"></i> Gestão de estoque</li>
-                        <li><i class="fas fa-check"></i> Relatórios de vendas</li>
-                        <li><i class="fas fa-check"></i> Design otimizado para conversão</li>
-                    </ul>
-                    <button class="cta-button pricing-button"
-                        onclick="window.location.href='https://wa.me/5518997330574?text=Olá,%20quero%20saber%20mais%20sobre%20Loja%20Virtual'">
-                        Solicitar Orçamento
-                    </button>
-                </div>
-
-                <!-- Apps e Softwares -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Apps e Softwares</h3>
-                    <p>Desenvolvimento de aplicativos e sistemas personalizados</p>
-                    <div class="service-price">Sob Consulta</div>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Aplicativos nativos e híbridos</li>
-                        <li><i class="fas fa-check"></i> Sistemas web personalizados</li>
-                        <li><i class="fas fa-check"></i> Desenvolvimento ágil</li>
-                        <li><i class="fas fa-check"></i> Interface intuitiva</li>
-                        <li><i class="fas fa-check"></i> Integração com APIs</li>
-                        <li><i class="fas fa-check"></i> Manutenção e suporte</li>
-                    </ul>
-                    <button class="cta-button pricing-button"
-                        onclick="window.location.href='https://wa.me/5518997330574?text=Olá,%20quero%20saber%20mais%20sobre%20Apps%20e%20Softwares'">
-                        Solicitar Orçamento
-                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features -->
-    <section class="features" id="features">
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container about-container">
+            <div class="about-img"></div>
+            <div class="about-content">
+                <h2>Sobre Nossa Empresa</h2>
+                <p>Com mais de 10 anos de experiência no mercado, nossa empresa se consolidou como referência em soluções profissionais personalizadas. Nossa equipe é composta por especialistas altamente qualificados em diversas áreas.</p>
+                <p>Nosso diferencial está na abordagem personalizada para cada cliente, entendendo suas necessidades específicas e desenvolvendo soluções que realmente funcionam para o seu contexto.</p>
+                <p>Acreditamos que cada projeto é único e merece atenção especial, por isso dedicamos tempo para compreender profundamente os objetivos e desafios de cada cliente antes de propor qualquer solução.</p>
+                <a href="#contact" class="btn">Entre em Contato</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-Briefing Section -->
+    <section class="pre-briefing" id="pre-briefing">
         <div class="container">
             <div class="section-title">
-                <h2>Vantagens dos Nossos Sites</h2>
-                <p>Diferenciais que fazem nossos sites se destacarem no mercado</p>
+                <h2>Pré-Briefing</h2>
+                <p>Preencha o formulário abaixo para que possamos entender melhor suas necessidades e entrar em contato com uma proposta personalizada</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
+            <form class="briefing-form" id="briefingForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Nome Completo *</label>
+                        <input type="text" id="name" class="form-control" required>
                     </div>
-                    <h3>100% Responsivo</h3>
-                    <p>Perfeito em qualquer dispositivo: celular, tablet ou computador.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-tachometer-alt"></i>
+                    <div class="form-group">
+                        <label for="company">Empresa</label>
+                        <input type="text" id="company" class="form-control">
                     </div>
-                    <h3>Super Rápido</h3>
-                    <p>Otimizado para carregamento ultrarrápido, melhorando sua taxa de conversão.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-search"></i>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" class="form-control" required>
                     </div>
-                    <h3>Otimizado para SEO</h3>
-                    <p>Pronto para ser encontrado no Google e outros mecanismos de busca.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
+                    <div class="form-group">
+                        <label for="phone">Telefone/WhatsApp *</label>
+                        <input type="tel" id="phone" class="form-control" required>
                     </div>
-                    <h3>Segurança Premium</h3>
-                    <p>Proteção avançada contra hackers e ameaças virtuais.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>Suporte Especializado</h3>
-                    <p>Equipe técnica para te ajudar no que precisar.</p>
+                <div class="form-group">
+                    <label for="service">Serviço de Interesse *</label>
+                    <select id="service" class="form-control" required>
+                        <option value="">Selecione um serviço</option>
+                        <option value="consultoria">Consultoria Estratégica</option>
+                        <option value="desenvolvimento">Desenvolvimento de Software</option>
+                        <option value="marketing">Marketing Digital</option>
+                        <option value="outro">Outro</option>
+                    </select>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>Entrega Rápida</h3>
-                    <p>Desenvolvimento ágil sem comprometer a qualidade.</p>
+                <div class="form-group">
+                    <label for="deadline">Prazo Desejado</label>
+                    <select id="deadline" class="form-control">
+                        <option value="">Selecione um prazo</option>
+                        <option value="urgente">Urgente (até 1 semana)</option>
+                        <option value="curto">Curto prazo (2-4 semanas)</option>
+                        <option value="medio">Médio prazo (1-3 meses)</option>
+                        <option value="longo">Longo prazo (mais de 3 meses)</option>
+                    </select>
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="budget">Faixa de Orçamento Prevista</label>
+                    <select id="budget" class="form-control">
+                        <option value="">Selecione uma faixa</option>
+                        <option value="ate-2k">Até R$ 2.000</option>
+                        <option value="2k-5k">R$ 2.000 - R$ 5.000</option>
+                        <option value="5k-10k">R$ 5.000 - R$ 10.000</option>
+                        <option value="10k-20k">R$ 10.000 - R$ 20.000</option>
+                        <option value="acima-20k">Acima de R$ 20.000</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Descreva seu Projeto ou Necessidade *</label>
+                    <textarea id="description" class="form-control" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="goals">Quais são seus principais objetivos com este projeto?</label>
+                    <textarea id="goals" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="challenges">Quais são os principais desafios que você enfrenta atualmente?</label>
+                    <textarea id="challenges" class="form-control"></textarea>
+                </div>
+                <button type="submit" class="btn">Enviar para WhatsApp</button>
+            </form>
         </div>
     </section>
 
-    <!-- Portfolio -->
-    <section class="portfolio" id="portfolio">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nossos Trabalhos</h2>
-                <p>Confira alguns dos sites que já desenvolvemos para nossos clientes</p>
-            </div>
-            <div class="portfolio-grid">
-                <!-- Item 1 -->
-                <div class="portfolio-item">
-                    <img src="img/1000626148.jpg" alt="Clínica Médica" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Clínica Médica</h3>
-                        <p>Site profissional com agendamento online e área de pacientes</p>
-                        <a href="https://www.azzulmedicina.com.br/" class="cta-button"
-                            style="margin-top: 15px; display: inline-block; padding: 10px 25px; font-size: 0.9rem;">Ver
-                            Site</a>
-                    </div>
-                </div>
-                <!-- Item 2 -->
-                <div class="portfolio-item">
-                    <img src="img/1000626142.jpg" alt="Construtora" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Construtora</h3>
-                        <p>Site profissional de engenharia civil</p>
-                        <a href="https://www.engesol.net/construcao.html" class="cta-button"
-                            style="margin-top: 15px; display: inline-block; padding: 10px 25px; font-size: 0.9rem;">Ver
-                            Site</a>
-                    </div>
-                </div>
-                <!-- Item 3 -->
-                <div class="portfolio-item">
-                    <img src="img/1000626144.jpg" alt="Psicóloga" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Psicóloga</h3>
-                        <p>Site institucional com blog integrado</p>
-                        <a href="https://www.wallidasantospsicologa.com.br/" class="cta-button"
-                            style="margin-top: 15px; display: inline-block; padding: 10px 25px; font-size: 0.9rem;">Ver
-                            Site</a>
-                    </div>
-                </div>
-                <!-- Item 4 -->
-                <div class="portfolio-item">
-                    <img src="img/1000626146.jpg" alt="Agência de Viagens" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Agência de Viagens</h3>
-                        <p>Site profissional com formulário de contato</p>
-                        <a href="https://www.heyviagens.com.br/" class="cta-button"
-                            style="margin-top: 15px; display: inline-block; padding: 10px 25px; font-size: 0.9rem;">Ver
-                            Site</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
+    <!-- FAQ Section -->
     <section class="faq" id="faq">
         <div class="container">
             <div class="section-title">
-                <h2>Dúvidas Frequentes</h2>
-                <p>Tire suas principais dúvidas sobre nossos serviços</p>
+                <h2>Perguntas Frequentes</h2>
+                <p>Tire suas dúvidas sobre nossos serviços e processos</p>
             </div>
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Quanto tempo leva para desenvolver um site?</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <span>Como funciona o processo de contratação?</span>
+                        <span>+</span>
                     </div>
                     <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>O prazo varia conforme o tipo de site. Landing pages geralmente ficam prontas em 3-5 dias
-                                úteis. Sites institucionais podem levar de 7-10 dias. Lojas virtuais e sistemas
-                                personalizados têm prazos que variam conforme a complexidade, geralmente entre 2-4
-                                semanas.</p>
-                        </div>
+                        <p>Nosso processo inicia com o preenchimento do pré-briefing, seguido por uma reunião de alinhamento para entendermos melhor suas necessidades. Em seguida, elaboramos uma proposta personalizada e, após a aprovação, iniciamos o projeto com um planejamento detalhado.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>O que está incluído no valor do site?</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <span>Quanto tempo leva para o projeto ser concluído?</span>
+                        <span>+</span>
                     </div>
                     <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>O valor inclui: design personalizado, desenvolvimento, hospedagem por 1 ano, domínio
-                                .com.br por 1 ano, certificado SSL, formulário de contato, integração com WhatsApp e
-                                redes sociais, e básico de SEO. Também inclui treinamento para gerenciamento do site.
-                            </p>
-                        </div>
+                        <p>O prazo varia de acordo com a complexidade do projeto. Projetos menores podem ser concluídos em algumas semanas, enquanto projetos mais complexos podem levar vários meses. Durante o pré-briefing, discutiremos prazos realistas para o seu caso específico.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Preciso pagar hospedagem separadamente?</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <span>Vocês oferecem suporte pós-entrega?</span>
+                        <span>+</span>
                     </div>
                     <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Sim. Mas,
-                                oferecemos planos de hospedagem e manutenção com valores acessíveis que incluem,
-                                atualizações e suporte.</p>
-                        </div>
+                        <p>Sim, oferecemos diferentes modalidades de suporte pós-entrega, desde suporte básico por um período determinado até contratos de manutenção contínua, dependendo da natureza do projeto e das necessidades do cliente.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Posso fazer alterações no meu site depois de pronto?</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <span>Como é definido o valor dos serviços?</span>
+                        <span>+</span>
                     </div>
                     <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Sim! Oferecemos pacotes de manutenção para alterações periódicas.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Como funciona o processo de criação?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Nosso processo é simples: 1) Contato inicial e briefing; 2) Definição do escopo e
-                                aprovação; 3) Desenvolvimento do design; 4) Desenvolvimento do site; 5) Revisões e
-                                ajustes; 6) Treinamento e entrega. Você participa ativamente em todas as etapas.</p>
-                        </div>
+                        <p>Nossos valores são definidos com base na complexidade do projeto, escopo de trabalho, prazos e recursos necessários. Após analisar as informações do pré-briefing, elaboramos uma proposta com valor personalizado para o seu caso.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta">
-        <div class="cta-content">
-            <h2>Pronto para Ter Seu Site Profissional?</h2>
-            <p>Entre em contato agora mesmo e solicite um orçamento sem compromisso</p>
-            <div class="button-group">
-                <button class="cta-button" onclick="window.location.href='#services'">
-                    Ver Serviços
-                </button>
-                <button class="cta-button secondary"
-                    onclick="window.location.href='https://wa.me/5518997330574?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento'">
-                    Pedir Orçamento
-                </button>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Entre em Contato</h2>
+                <p>Estamos à disposição para esclarecer dúvidas e discutir seu projeto</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h4>Telefone/WhatsApp</h4>
+                            <p>(18) 99674-2364</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h4>E-mail</h4>
+                            <p>contato@servicospro.com.br</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Endereço</h4>
+                            <p>Av. Principal, 1234 - Centro<br>São Paulo - SP, 01234-567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div class="contact-details">
+                            <h4>Horário de Atendimento</h4>
+                            <p>Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 13h</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Envie uma Mensagem</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="contact-name">Nome</label>
+                            <input type="text" id="contact-name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">E-mail</label>
+                            <input type="email" id="contact-email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Assunto</label>
+                            <input type="text" id="contact-subject" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Mensagem</label>
+                            <textarea id="contact-message" class="form-control"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/5518997330574?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20de%20criação%20de%20site"
-        class="whatsapp-button" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Budget Button -->
-    <a href="https://wa.me/5518997330574?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento" class="budget-button"
-        target="_blank">
-        <i class="fas fa-file-invoice-dollar"></i>
-        <span class="budget-text">Solicitar Orçamento</span>
-    </a>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-container">
                 <div class="footer-col">
-                    <h3>BrandCode</h3>
-                    <p style="color: #cbd5e1; margin-bottom: 20px;">Criamos sites profissionais que geram resultados
-                        reais para seu negócio.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                    <h3>Serviços Pro</h3>
+                    <p>Oferecemos soluções profissionais personalizadas para empresas de todos os tamanhos, com foco em resultados e satisfação do cliente.</p>
                 </div>
                 <div class="footer-col">
                     <h3>Links Rápidos</h3>
-                    <ul class="footer-links">
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Serviços</a></li>
-                        <li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Portfólio</a></li>
-                        <li><a href="#faq"><i class="fas fa-chevron-right"></i> Dúvidas</a></li>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#pre-briefing">Pré-Briefing</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contato</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Serviços</h3>
-                    <ul class="footer-links">
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Landing Page</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Site Institucional</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Loja Virtual</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Apps e Softwares</a></li>
+                    <ul>
+                        <li><a href="#services">Consultoria Estratégica</a></li>
+                        <li><a href="#services">Desenvolvimento de Software</a></li>
+                        <li><a href="#services">Marketing Digital</a></li>
+                        <li><a href="#services">Design e Branding</a></li>
+                        <li><a href="#services">Análise de Dados</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Contato</h3>
-                    <ul class="footer-links">
-                        <li><a href="tel:+5518997330574"><i class="fas fa-phone-alt"></i> (18) 99733-0574</a></li>
-                        <li><a href="mailto:brandcodesolutions@gmail.com"><i class="fas fa-envelope"></i>
-                                brandcodesolutions@gmail.com</a></li>
-                        <li><i class="fas fa-map-marker-alt"></i> São Paulo - SP</li>
-                        <li><a href="https://wa.me/5518997330574" target="_blank"><i class="fab fa-whatsapp"></i>
-                                WhatsApp</a></li>
+                    <ul>
+                        <li><a href="tel:18996742364">(18) 99674-2364</a></li>
+                        <li><a href="mailto:contato@servicospro.com.br">contato@servicospro.com.br</a></li>
+                        <li>Av. Principal, 1234 - Centro</li>
+                        <li>São Paulo - SP</li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 BrandCode Solutions. Todos os direitos reservados.</p>
+                <p>&copy; 2023 Serviços Pro. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Menu Mobile
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        const header = document.getElementById('header');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuToggle.innerHTML = navLinks.classList.contains('active') ?
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-
-                // Fechar menu mobile após clicar
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                }
-            });
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
         });
 
         // FAQ Accordion
-        const faqQuestions = document.querySelectorAll('.faq-question');
-
-        faqQuestions.forEach(question => {
+        document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
-                const isActive = question.classList.contains('active');
-
-                // Fechar todas as outras respostas
-                faqQuestions.forEach(q => {
-                    q.classList.remove('active');
-                    q.nextElementSibling.style.maxHeight = null;
-                });
-
-                // Abrir a resposta clicada se não estiver ativa
-                if (!isActive) {
-                    question.classList.add('active');
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                }
+                answer.classList.toggle('active');
+                
+                // Change icon
+                const icon = question.querySelector('span:last-child');
+                icon.textContent = answer.classList.contains('active') ? '−' : '+';
             });
         });
 
-        // Animação ao rolar
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.feature-card, .portfolio-item, .service-card, .pricing-card, .faq-item');
-
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
-            });
-        };
-
-        // Adiciona opacidade inicial para animação
-        window.addEventListener('load', () => {
-            const elements = document.querySelectorAll('.feature-card, .portfolio-item, .service-card, .pricing-card, .faq-item');
-            elements.forEach(element => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(20px)';
-                element.style.transition = 'all 0.5s ease';
-            });
-
-            // Trigger animation
-            setTimeout(animateOnScroll, 500);
+        // Form Submission to WhatsApp
+        document.getElementById('briefingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const name = document.getElementById('name').value;
+            const company = document.getElementById('company').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const deadline = document.getElementById('deadline').value;
+            const budget = document.getElementById('budget').value;
+            const description = document.getElementById('description').value;
+            const goals = document.getElementById('goals').value;
+            const challenges = document.getElementById('challenges').value;
+            
+            // Format message for WhatsApp
+            let message = `Olá! Gostaria de solicitar um orçamento:\n\n`;
+            message += `*Nome:* ${name}\n`;
+            if (company) message += `*Empresa:* ${company}\n`;
+            message += `*E-mail:* ${email}\n`;
+            message += `*Telefone:* ${phone}\n`;
+            message += `*Serviço de Interesse:* ${document.getElementById('service').options[document.getElementById('service').selectedIndex].text}\n`;
+            if (deadline) message += `*Prazo Desejado:* ${document.getElementById('deadline').options[document.getElementById('deadline').selectedIndex].text}\n`;
+            if (budget) message += `*Faixa de Orçamento:* ${document.getElementById('budget').options[document.getElementById('budget').selectedIndex].text}\n`;
+            message += `*Descrição do Projeto:* ${description}\n`;
+            if (goals) message += `*Objetivos:* ${goals}\n`;
+            if (challenges) message += `*Desafios:* ${challenges}\n`;
+            
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // WhatsApp URL
+            const whatsappURL = `https://wa.me/5518996742364?text=${encodedMessage}`;
+            
+            // Open WhatsApp
+            window.open(whatsappURL, '_blank');
         });
 
-        window.addEventListener('scroll', animateOnScroll);
-
-        // WhatsApp Button Tracking
-        document.querySelector('.whatsapp-button').addEventListener('click', function () {
-            fbq('track', 'Contact');
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('nav ul').classList.remove('active');
+                }
+            });
         });
     </script>
 </body>
-
 </html>
