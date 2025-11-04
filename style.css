@@ -1,0 +1,504 @@
+:root {
+  --preto: #000;
+  --azul: #0057ff;
+  --branco: #ffffff;
+  --cinza: #ececec;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.95) !important;
+  backdrop-filter: blur(6px);
+  padding: 0.6rem 1rem;
+}
+
+.navbar-brand img {
+  border-radius: 10px;
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar .nav-link {
+  color: var(--cinza);
+  padding: 0.8rem 1rem;
+  transition: color 0.3s;
+}
+
+.navbar .nav-link:hover {
+  color: var(--azul);
+}
+
+body {
+  padding-top: 70px;
+}
+
+
+body {
+  background-color: var(--preto);
+  color: var(--cinza);
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--branco);
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: var(--azul);
+}
+
+/* === HERO === */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* Vídeo de fundo */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* cobre toda a área sem distorção */
+  z-index: -1; /* mantém atrás do conteúdo */
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  color: var(--cinza);
+  max-width: 700px;
+  margin-bottom: 2rem;
+}
+
+.btn-azul {
+  background-color: var(--azul);
+  color: var(--branco);
+  border-radius: 10px;
+  padding: 0.75rem 2rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-azul:hover {
+  box-shadow: 0 0 10px var(--azul);
+  transform: scale(1.05);
+}
+
+/* === MAPA === */
+.mapa {
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+.mapa img {
+  max-width: 600px;
+  width: 100%;
+  border-radius: 10px;
+}
+/* === CLIENTES === */
+.clientes {
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+.clientes-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
+.clientes img {
+  width: 100px;
+  filter: grayscale(100%);
+  transition: 0.3s;
+}
+
+.clientes img:hover {
+  filter: grayscale(0%) brightness(1.2);
+  transform: scale(1.1);
+}
+
+/* === SOLUÇÕES === */
+.solucoes-impacto {
+  background: #000;
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.solucoes-impacto h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  border-radius: 3px;
+  margin-bottom: 50px;
+}
+
+.solucoes-impacto .descricao-topo {
+  color: #ccc;
+  font-size: 1.1rem;
+  margin-bottom: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.solucoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.solucao-box {
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px 30px;
+  border-radius: 18px;
+  transition: all 0.3s ease;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.solucao-box:hover {
+  border-color: #0057ff;
+  box-shadow: 0 0 25px rgba(0, 87, 255, 0.2);
+  transform: translateY(-8px);
+}
+
+.solucao-box .icone {
+  font-size: 2.2rem;
+  color: #0057ff;
+  margin-bottom: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.solucao-box:hover .icone {
+  transform: scale(1.1);
+}
+
+.solucao-box h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.solucao-box p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* Lista */
+.solucao-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.solucao-box ul li {
+  font-size: 0.95rem;
+  color: #aaa;
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.solucao-box ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #0057ff;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .solucoes-impacto {
+    padding: 70px 15px;
+  }
+
+  .solucao-box {
+    text-align: center;
+  }
+
+  .solucao-box ul li {
+    padding-left: 0;
+  }
+
+  .solucao-box ul li::before {
+    display: none;
+  }
+}
+
+/* === TECNOLOGIA === */
+.tecnologia {
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+.tecnologia-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
+.tecnologia img {
+  width: 100px;
+}
+
+
+/* === CONTRATAR === */
+.contratar {
+  text-align: center;
+  padding: 5rem 1rem;
+  background-color: #000;
+}
+
+.contratar p {
+  max-width: 800px;
+  margin: 1.5rem auto;
+  font-size: 1.1rem;
+}
+
+.contratar .destaque {
+  color: var(--azul);
+  font-weight: 600;
+}
+
+/* === FAQ === */
+
+.faq {
+  padding: 60px 20px;
+  background-color: #000;
+  color: #fff;
+}
+
+.faq h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+}
+
+.faq h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 15px auto 0;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border: 1px solid rgba(0, 87, 255, 0.4);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 20px;
+  cursor: pointer;
+  background-color: #111;
+  position: relative;
+  font-weight: 500;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+  font-size: 1.5rem;
+  color: #0057ff;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question {
+  background-color: #0057ff;
+  color: #fff;
+}
+
+.faq-item.active .faq-question::after {
+  content: "–";
+  color: #fff;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #e0e0e0;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+  padding: 15px 20px;
+  max-height: 500px;
+}
+
+/* Hover */
+.faq-question:hover {
+  color: #0057ff;
+}
+
+@media (max-width: 768px) {
+  .faq {
+    padding: 40px 15px;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+    padding: 16px;
+  }
+
+  .faq-answer {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+/* === VOLTAR AO TOPO === */
+.voltar-topo {
+  text-align: center;
+  padding: 3rem;
+}
+
+.voltar-topo a {
+  color: var(--cinza);
+  display: inline-block;
+  transition: 0.3s;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.voltar-topo a:hover {
+  color: var(--azul);
+  transform: translateY(-5px);
+}
+
+/* === FOOTER === */
+footer {
+  background-color: var(--preto);
+  color: var(--cinza);
+  padding: 3rem 0;
+}
+
+footer h5 {
+  color: #0057ff;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: var(--cinza);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #0057ff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  color: #0057ff;
+  font-weight: 600;
+}
+
+/* === BOTÃO WHATSAPP === */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.whatsapp-float img {
+  width: 35px;
+  height: 35px;
+  filter: brightness(0) invert(1);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: #1ebe5d;
+}
+
+
+/* === RESPONSIVO === */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .clientes img {
+    width: 80px;
+  }
+
+  .tecnologia-logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    margin-top: 2rem;
+  }
+
+  .tecnologia img {
+    width: 80px;
+  }
+}
