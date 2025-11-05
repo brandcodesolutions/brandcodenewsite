@@ -57,9 +57,13 @@
       Seu navegador não suporta vídeo em background.
     </video>
 
-    <script> const video = document.getElementById('bg-video'); function seamlessLoop() { const endThreshold = 0.12; 
-    if (video.duration - video.currentTime <= endThreshold) { video.currentTime = 0.05;
-    video.play(); } requestAnimationFrame(seamlessLoop); } video.addEventListener('canplay', () => { video.play(); requestAnimationFrame(seamlessLoop); }); </script>
+    <script> const video = document.getElementById('bg-video'); function seamlessLoop() {
+        const endThreshold = 0.12;
+        if (video.duration - video.currentTime <= endThreshold) {
+          video.currentTime = 0.05;
+          video.play();
+        } requestAnimationFrame(seamlessLoop);
+      } video.addEventListener('canplay', () => { video.play(); requestAnimationFrame(seamlessLoop); }); </script>
 
     <h1>Construímos o futuro digital da sua empresa.</h1>
     <p>
@@ -73,278 +77,297 @@
       impulsionar o crescimento do seu negócio com inovação e excelência.
     </p>
     <!-- BOTÃO (pode repetir quantas vezes quiser) -->
-<a href="#" class="abrirModal btn btn-azul">Receber Protótipo Exclusivo!</a>
+    <a href="#" class="abrirModal btn btn-azul">Receber Protótipo Exclusivo!</a>
 
-<!-- MODAL -->
-<div id="modalQuiz" class="modal-overlay hidden">
-  <div class="modal-content">
-    <span id="fecharModal" class="fechar">&times;</span>
-    <h2 class="titulo">Solicite seu protótipo personalizado em 4 passos simples ⚡</h2>
+    <!-- MODAL -->
+    <div id="modalQuiz" class="modal-overlay hidden">
+      <div class="modal-content">
+        <span id="fecharModal" class="fechar">&times;</span>
+        <h2 class="titulo">Solicite seu protótipo personalizado em 4 passos simples ⚡</h2>
 
-    <!-- Barra de progresso -->
-    <div class="progress-container">
-      <div id="progressBar" class="progress-bar"></div>
+        <!-- Barra de progresso -->
+        <div class="progress-container">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+
+        <form id="quizForm">
+          <!-- Etapa 1 -->
+          <div class="etapa ativa">
+            <label>Seu nome:</label>
+            <input type="text" name="nome" required />
+            <label>Nome da empresa:</label>
+            <input type="text" name="empresa" required />
+          </div>
+
+          <!-- Etapa 2 -->
+          <div class="etapa">
+            <label>Qual tipo de projeto você procura?</label>
+            <select name="tipo" required>
+              <option value="">Selecione...</option>
+              <option value="Site Institucional">Site</option>
+
+              <option value="Software">Software</option>
+              <option value="Aplicativo">Aplicativo</option>
+            </select>
+          </div>
+
+          <!-- Etapa 3 -->
+          <div class="etapa">
+            <label>Qual o principal objetivo?</label>
+            <select name="objetivo" required>
+              <option value="">Selecione...</option>
+              <option value="Vender mais">Vender mais</option>
+              <option value="Aumentar autoridade">Aumentar autoridade</option>
+              <option value="Gerar orçamentos">Gerar orçamentos</option>
+              <option value="Automatizar processos">Automatizar processos</option>
+            </select>
+          </div>
+
+          <!-- Etapa 4 -->
+          <div class="etapa">
+            <label>Quando pretende iniciar o projeto?</label>
+            <select name="prazo" required>
+              <option value="">Selecione...</option>
+              <option value="Imediatamente">Imediatamente</option>
+              <option value="Nas próximas semanas">Nas próximas semanas</option>
+              <option value="Apenas pesquisando valores">Apenas pesquisando valores</option>
+            </select>
+          </div>
+
+          <div class="botoes">
+            <button type="button" id="voltarBtn" class="btn-secundario hidden">Voltar</button>
+            <button type="button" id="avancarBtn" class="btn-principal">Avançar</button>
+          </div>
+        </form>
+      </div>
     </div>
 
-    <form id="quizForm">
-      <!-- Etapa 1 -->
-      <div class="etapa ativa">
-        <label>Seu nome:</label>
-        <input type="text" name="nome" required />
-        <label>Nome da empresa:</label>
-        <input type="text" name="empresa" required />
-      </div>
+    <!-- ESTILOS -->
+    <style>
+      :root {
+        --preto: #000;
+        --azul: #0057ff;
+        --branco: #ffffff;
+        --cinza: #ececec;
+        --verde: #0057ff;
+      }
 
-      <!-- Etapa 2 -->
-      <div class="etapa">
-        <label>Qual tipo de projeto você procura?</label>
-        <select name="tipo" required>
-          <option value="">Selecione...</option>
-          <option value="Site Institucional">Site Profissional</option>
-         
-          <option value="Software">Software Sob Demanda</option>
-          <option value="Aplicativo">Aplicativo Moderno</option>
-        </select>
-      </div>
 
-      <!-- Etapa 3 -->
-      <div class="etapa">
-        <label>Qual o principal objetivo?</label>
-        <select name="objetivo" required>
-          <option value="">Selecione...</option>
-          <option value="Vender mais">Vender mais</option>
-          <option value="Aumentar autoridade">Aumentar autoridade</option>
-          <option value="Gerar orçamentos">Gerar orçamentos</option>
-          <option value="Automatizar processos">Automatizar processos</option>
-        </select>
-      </div>
 
-      <!-- Etapa 4 -->
-      <div class="etapa">
-        <label>Quando pretende iniciar o projeto?</label>
-        <select name="urgencia" required>
-          <option value="">Selecione...</option>
-          <option value="Imediatamente">Imediatamente</option>
-          <option value="Nas próximas semanas">Nas próximas semanas</option>
-          <option value="Apenas pesquisando valores">Apenas pesquisando valores</option>
-        </select>
-      </div>
+      /* ===== Modal ===== */
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+      }
 
-      <div class="botoes">
-        <button type="button" id="voltarBtn" class="btn-secundario hidden">Voltar</button>
-        <button type="button" id="avancarBtn" class="btn-principal">Avançar</button>
-      </div>
-    </form>
-  </div>
-</div>
+      .hidden {
+        display: none;
+      }
 
-<!-- ESTILOS -->
-<style>
-  :root {
-    --preto: #000;
-    --azul: #0057ff;
-    --branco: #ffffff;
-    --cinza: #ececec;
-    --verde: #0057ff;
-  }
+      .modal-content {
+        background: #0d1117;
+        border: 1px solid #1f2937;
+        padding: 30px;
+        border-radius: 16px;
+        width: 90%;
+        max-width: 500px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+        position: relative;
+        animation: slideIn 0.4s ease;
+      }
 
-  
+      @keyframes slideIn {
+        from {
+          transform: translateY(-40px);
+          opacity: 0;
+        }
 
-  /* ===== Modal ===== */
-  .modal-overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-  }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
 
-  .hidden { display: none; }
+      .fechar {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        font-size: 28px;
+        color: #fff;
+        cursor: pointer;
+      }
 
-  .modal-content {
-    background: #0d1117;
-    border: 1px solid #1f2937;
-    padding: 30px;
-    border-radius: 16px;
-    width: 90%;
-    max-width: 500px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.6);
-    position: relative;
-    animation: slideIn 0.4s ease;
-  }
+      .titulo {
+        text-align: center;
+        color: var(--branco);
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
 
-  @keyframes slideIn {
-    from { transform: translateY(-40px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-  }
+      label {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--branco);
+      }
 
-  .fechar {
-    position: absolute;
-    right: 15px; top: 10px;
-    font-size: 28px;
-    color: #fff;
-    cursor: pointer;
-  }
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        background-color: #111827;
+        border: 1px solid #374151;
+        color: var(--branco);
+        margin-bottom: 16px;
+        outline: none;
+        font-family: "Poppins", sans-serif;
+      }
 
-  .titulo {
-    text-align: center;
-    color: var(--branco);
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
+      input:focus,
+      select:focus {
+        border-color: var(--verde);
+      }
 
-  label {
-    display: block;
-    margin-bottom: 6px;
-    color: var(--branco);
-  }
+      .botoes {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
 
-  input, select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    background-color: #111827;
-    border: 1px solid #374151;
-    color: var(--branco);
-    margin-bottom: 16px;
-    outline: none;
-    font-family: "Poppins", sans-serif;
-  }
+      .btn-principal {
+        background-color: var(--verde);
+        color: #000;
+        padding: 10px 24px;
+        border: none;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
 
-  input:focus, select:focus {
-    border-color: var(--verde);
-  }
+      .btn-principal:hover {
+        background-color: #00349b;
+        color: #fff;
+      }
 
-  .botoes {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
+      .btn-secundario {
+        background-color: #1f2937;
+        color: var(--branco);
+        padding: 10px 24px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
 
-  .btn-principal {
-    background-color: var(--verde);
-    color: #000;
-    padding: 10px 24px;
-    border: none;
-    border-radius: 30px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
+      .btn-secundario:hover {
+        background-color: #374151;
+      }
 
-  .btn-principal:hover {
-    background-color: #00349b;
-    color: #fff;
-  }
+      .progress-container {
+        width: 100%;
+        height: 6px;
+        background: #1f2937;
+        border-radius: 10px;
+        margin-bottom: 25px;
+      }
 
-  .btn-secundario {
-    background-color: #1f2937;
-    color: var(--branco);
-    padding: 10px 24px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
+      .progress-bar {
+        width: 25%;
+        height: 6px;
+        background: var(--verde);
+        border-radius: 10px;
+        transition: width 0.3s ease;
+      }
 
-  .btn-secundario:hover {
-    background-color: #374151;
-  }
+      .etapa {
+        display: none;
+      }
 
-  .progress-container {
-    width: 100%;
-    height: 6px;
-    background: #1f2937;
-    border-radius: 10px;
-    margin-bottom: 25px;
-  }
+      .etapa.ativa {
+        display: block;
+      }
+    </style>
 
-  .progress-bar {
-    width: 25%;
-    height: 6px;
-    background: var(--verde);
-    border-radius: 10px;
-    transition: width 0.3s ease;
-  }
+    <!-- SCRIPT -->
+    <script>
+      const modal = document.getElementById("modalQuiz");
+      const fecharModal = document.getElementById("fecharModal");
+      const etapas = document.querySelectorAll(".etapa");
+      const avancarBtn = document.getElementById("avancarBtn");
+      const voltarBtn = document.getElementById("voltarBtn");
+      const progressBar = document.getElementById("progressBar");
+      let etapaAtual = 0;
 
-  .etapa { display: none; }
-  .etapa.ativa { display: block; }
-</style>
+      // ✅ Delegação de eventos: qualquer botão com classe .abrirModal abre o modal
+      document.addEventListener("click", function (e) {
+        const botao = e.target.closest(".abrirModal");
+        if (!botao) return; // clicou em outro elemento
+        e.preventDefault();
+        modal.classList.remove("hidden");
+        etapaAtual = 0;
+        atualizarEtapa();
 
-<!-- SCRIPT -->
-<script>
-  const modal = document.getElementById("modalQuiz");
-  const fecharModal = document.getElementById("fecharModal");
-  const etapas = document.querySelectorAll(".etapa");
-  const avancarBtn = document.getElementById("avancarBtn");
-  const voltarBtn = document.getElementById("voltarBtn");
-  const progressBar = document.getElementById("progressBar");
-  let etapaAtual = 0;
+        // foco automático no primeiro campo da etapa
+        setTimeout(() => {
+          const primeiroCampo = etapas[0].querySelector("input, select, textarea");
+          if (primeiroCampo) primeiroCampo.focus();
+        }, 100);
+      });
 
-  // ✅ Delegação de eventos: qualquer botão com classe .abrirModal abre o modal
-  document.addEventListener("click", function (e) {
-    const botao = e.target.closest(".abrirModal");
-    if (!botao) return; // clicou em outro elemento
-    e.preventDefault();
-    modal.classList.remove("hidden");
-    etapaAtual = 0;
-    atualizarEtapa();
+      // fechar modal
+      fecharModal.addEventListener("click", () => modal.classList.add("hidden"));
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) modal.classList.add("hidden");
+      });
 
-    // foco automático no primeiro campo da etapa
-    setTimeout(() => {
-      const primeiroCampo = etapas[0].querySelector("input, select, textarea");
-      if (primeiroCampo) primeiroCampo.focus();
-    }, 100);
-  });
+      // avançar etapas
+      avancarBtn.addEventListener("click", () => {
+        if (etapaAtual < etapas.length - 1) {
+          etapaAtual++;
+          atualizarEtapa();
+        } else {
+          const nome = document.querySelector('input[name="nome"]').value;
+          const tipo = document.querySelector('select[name="tipo"]').value;
+          const empresa = document.querySelector('input[name="empresa"]').value;
+          const prazo = document.querySelector('select[name="prazo"]').value;
+          const objetivo = document.querySelector('select[name="objetivo"]').value;
 
-  // fechar modal
-  fecharModal.addEventListener("click", () => modal.classList.add("hidden"));
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) modal.classList.add("hidden");
-  });
-
-  // avançar etapas
-  avancarBtn.addEventListener("click", () => {
-    if (etapaAtual < etapas.length - 1) {
-      etapaAtual++;
-      atualizarEtapa();
-    } else {
-      const nome = document.querySelector('input[name="nome"]').value;
-      const tipo = document.querySelector('select[name="tipo"]').value;
-      const empresa = document.querySelector('input[name="empresa"]').value;
-      const urgencia = document.querySelector('select[name="urgencia"]').value;
-      const objetivo = document.querySelector('select[name="objetivo"]').value;
-
-      const msg = `Olá! Meu nome é ${nome}, da empresa ${empresa}.
+          const msg = `Olá! Meu nome é ${nome}, da empresa ${empresa}.
 Tenho interesse em um ${tipo}.
 Objetivo: ${objetivo}.
-Urgência: ${urgencia}.`;
+Prazo: ${prazo}.`;
 
-      const url = `https://wa.me/5518996742364?text=${encodeURIComponent(msg)}`;
-      window.open(url, "_blank");
-      modal.classList.add("hidden");
-    }
-  });
+          const url = `https://wa.me/5518996742364?text=${encodeURIComponent(msg)}`;
+          window.open(url, "_blank");
+          modal.classList.add("hidden");
+        }
+      });
 
-  // voltar etapas
-  voltarBtn.addEventListener("click", () => {
-    if (etapaAtual > 0) {
-      etapaAtual--;
-      atualizarEtapa();
-    }
-  });
+      // voltar etapas
+      voltarBtn.addEventListener("click", () => {
+        if (etapaAtual > 0) {
+          etapaAtual--;
+          atualizarEtapa();
+        }
+      });
 
-  // atualizar UI conforme a etapa
-  function atualizarEtapa() {
-    etapas.forEach((etapa, i) => etapa.classList.toggle("ativa", i === etapaAtual));
-    voltarBtn.classList.toggle("hidden", etapaAtual === 0);
-    progressBar.style.width = ((etapaAtual + 1) / etapas.length) * 100 + "%";
-    avancarBtn.textContent = etapaAtual === etapas.length - 1 ? "Enviar" : "Avançar";
-  }
-</script>
+      // atualizar UI conforme a etapa
+      function atualizarEtapa() {
+        etapas.forEach((etapa, i) => etapa.classList.toggle("ativa", i === etapaAtual));
+        voltarBtn.classList.toggle("hidden", etapaAtual === 0);
+        progressBar.style.width = ((etapaAtual + 1) / etapas.length) * 100 + "%";
+        avancarBtn.textContent = etapaAtual === etapas.length - 1 ? "Enviar" : "Avançar";
+      }
+    </script>
 
 
   </section>
