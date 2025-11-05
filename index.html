@@ -79,7 +79,7 @@
 <div id="modalQuiz" class="modal-overlay hidden">
   <div class="modal-content">
     <span id="fecharModal" class="fechar">&times;</span>
-    <h2 class="titulo">Monte seu protótipo em 4 passos ⚡</h2>
+    <h2 class="titulo">Solicite seu protótipo personalizado em 4 passos simples ⚡</h2>
 
     <!-- Barra de progresso -->
     <div class="progress-container">
@@ -100,11 +100,10 @@
         <label>Qual tipo de projeto você procura?</label>
         <select name="tipo" required>
           <option value="">Selecione...</option>
-          <option value="Site Institucional">Site Institucional</option>
-          <option value="Landing Page">Landing Page</option>
-          <option value="Loja Virtual">Loja Virtual</option>
-          <option value="Software">Software</option>
-          <option value="Aplicativo">Aplicativo</option>
+          <option value="Site Institucional">Site Profissional</option>
+         
+          <option value="Software">Software Sob Demanda</option>
+          <option value="Aplicativo">Aplicativo Moderno</option>
         </select>
       </div>
 
@@ -146,21 +145,10 @@
     --azul: #0057ff;
     --branco: #ffffff;
     --cinza: #ececec;
-    --verde: #00c896;
+    --verde: #0057ff;
   }
 
-  .btn-azul {
-    background-color: var(--azul);
-    color: var(--branco);
-    padding: 12px 28px;
-    border-radius: 30px;
-    font-weight: 600;
-    transition: background 0.3s;
-  }
-
-  .btn-azul:hover {
-    background-color: #0073ff;
-  }
+  
 
   /* ===== Modal ===== */
   .modal-overlay {
@@ -248,7 +236,8 @@
   }
 
   .btn-principal:hover {
-    background-color: #00e6ab;
+    background-color: #00349b;
+    color: #fff;
   }
 
   .btn-secundario {
@@ -334,7 +323,7 @@ Tenho interesse em um ${tipo}.
 Objetivo: ${objetivo}.
 Urgência: ${urgencia}.`;
 
-      const url = `https://wa.me/5518998037956?text=${encodeURIComponent(msg)}`;
+      const url = `https://wa.me/5518996742364?text=${encodeURIComponent(msg)}`;
       window.open(url, "_blank");
       modal.classList.add("hidden");
     }
@@ -477,7 +466,7 @@ Urgência: ${urgencia}.`;
         marca</span>. Sendo assim, você estará sempre à frente da concorrência, com soluções eficientes, <span
         class="destaque">atualizadas e alinhadas às tendências do mercado</span>.
     </p>
-    <a href="#" class="abrirModal btn btn-azul">Quero meu protótipo</a>
+    <a href="#" class="abrirModal btn btn-azul">Solicitar Protótipo!</a>
   </section>
 
   <!-- FAQ -->
