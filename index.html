@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrandCode Solutions</title>
+  <link rel="icon" href="images/favicon-16x16.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="navbar navbar-expand-lg bg-black navbar-dark fixed-top">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="#topo">
+        <img id="logo" src="images/brandcodelogo1.png" alt="BrandCode Solutions" width="45" height="45">
+        <style>
+          #logo {
+            transition: 0.3s ease;
+          }
+
+          .navbar-brand:hover #logo {
+            content: url("images/brandcodelogo2.png");
+          }
+        </style>
+      </a>
+
+      <!-- Botão hamburguer -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menu oculto -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav text-center">
+          <li class="nav-item"><a class="nav-link" href="sites.html">Sites</a></li>
+          <li class="nav-item"><a class="nav-link" href="softwares.html">Softwares</a></li>
+          <li class="nav-item"><a class="nav-link" href="aplicativos.html">Aplicativos</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="topo">
+
+    <video id="bg-video" autoplay muted playsinline preload="auto" class="hero-video">
+      <source src="images/backgroundbanner.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo em background
+    </video>
+
+    <script> const video = document.getElementById('bg-video'); function seamlessLoop() { const endThreshold = 0.12; 
+    if (video.duration - video.currentTime <= endThreshold) { video.currentTime = 0.05;
+    video.play(); } requestAnimationFrame(seamlessLoop); } video.addEventListener('canplay', () => { video.play(); requestAnimationFrame(seamlessLoop); }); </script>
+
+    <h1>Construímos o futuro digital da sua empresa.</h1>
+    <p>
+      Muito prazer, somos a <span style="color:#0057ff; font-weight:600;">BrandCode Solutions</span>.
+      Uma empresa de tecnologia presente em 8 estados do Brasil, formada por uma equipe de especialistas em
+      <span style="color:#0057ff; font-weight:600;">Design Gráfico, UI/UX, Marketing e Tecnologia da Informação</span>
+      que atuam de forma integrada para desenvolver
+      soluções digitais de alta qualidade.
+      Criamos <span style="color:#0057ff; font-weight:600;">sites, softwares e aplicativos sob medida</span>, projetados
+      para atender às necessidades exclusivas de cada cliente e
+      impulsionar o crescimento do seu negócio com inovação e excelência.
+    </p>
+    <a href="https://wa.me/5518998037956" target="_blank" class="btn btn-azul">Receber Orçamento Exclusivo!</a>
+  </section>
+
+  <!-- CLIENTES -->
+  <section class="clientes">
+    <h2>Empresas que confiam em nossas soluções</h2>
+    <div class="clientes-logos">
+      <img src="images/logo1.png" alt="Cliente 1" />
+      <img src="images/logo2.png" alt="Cliente 2" />
+      <img src="images/logo3.png" alt="Cliente 3" />
+      <img src="images/logo4.png" alt="Cliente 4" />
+      <img src="images/logo5.png" alt="Cliente 5" />
+      <img src="images/logo6.png" alt="Cliente 6" />
+      <img src="images/logo7.png" alt="Cliente 7" />
+      <img src="images/logo8.png" alt="Cliente 8" />
+      <img src="images/logo9.png" alt="Cliente 9" />
+    </div>
+  </section>
+
+  <!-- MAPA -->
+  <section class="mapa">
+    <h2>Estamos presentes em diversos estados do Brasil</h2>
+    <p>Já atuamos em diversas regiões do país, oferecendo soluções de qualidade, eficientes e totalmente personalizadas
+      para cada projeto.</p>
+    <img src="images/brandcodemap.png" alt="Estados em que estamos presentes" />
+  </section>
+
+  <!--SOLUÇÕES-->
+  <section class="solucoes-impacto">
+    <div class="container">
+      <h2>Nossas soluções de impacto</h2>
+      <br>
+
+      <div class="solucoes-grid">
+        <div class="solucao-box">
+          <div class="icone"><i class="fa-solid fa-globe"></i></div>
+          <h3>Sites Profissionais</h3>
+          <p>
+            Desenvolvemos sites personalizados, estratégicos e otimizados para aparecer no Google, refletindo com
+            precisão a identidade e os valores da sua empresa.
+          </p>
+          <ul>
+            <li><b> Design personalizado:</b> Layout exclusivo que reflete a identidade da sua empresa.</li>
+            <li><b>Site no Google:</b> Otimização avançada com técnicas de SEO para garantir melhor posicionamento e
+              visibilidade nos motores de busca.</li>
+
+            <li><b>Responsivo:</b> Compatível com todos os dispositivos, do desktop ao mobile.</li>
+            <li><b>UX Estratégico:</b> Experiência de navegação planejada para conversão.</li><br>
+          </ul>
+        </div>
+
+        <div class="solucao-box">
+          <div class="icone"><i class="fa fa-sitemap"></i></div>
+          <h3>Softwares Sob Demanda</h3>
+          <p>
+            Desenvolvemos softwares personalizados e eficientes, adaptados às necessidades específicas da sua empresa,
+            garantindo eficiência, integração e escalabilidade nos processos internos.
+          </p>
+          <ul>
+            <li><b>Automatização de Processos:</b> Redução de tarefas manuais e aumento da eficiência operacional.</li>
+            <li><b>Escalabilidade:</b> Software preparado para crescer junto com o seu negócio.</li>
+            <li><b>Interface Intuitiva:</b> Design pensado para facilitar a experiência do usuário.</li>
+            <li><b>Atualização Contínua:</b> Suporte e manutenção contínua para garantir o sucesso do seu software.</li>
+          </ul>
+        </div>
+
+        <div class="solucao-box">
+          <div class="icone"><i class="fa-solid fa-mobile-screen-button"></i></div>
+          <h3>Aplicativos Modernos</h3>
+          <p>
+            Desenvolvemos aplicativos modernos e funcionais, com design intuitivo e tecnologia de ponta, garantindo
+            experiência fluida, alta performance e conectividade total com o seu negócio.
+          </p>
+          <ul>
+            <li><b>Funcionalidades Personalizadas:</b> Recursos desenvolvidos de acordo com a necessidade do seu
+              negócio.</li>
+            <li><b>Performance Otimizada:</b> Aplicativos rápidos e responsivos, sem travamentos.</li>
+            <li><b>Experiência do Usuário:</b> Navegação fluida e intuitiva para engajamento máximo.</li>
+            <li><b>Conectividade Total:</b> Integração com redes sociais e serviços digitais.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tecnologia -->
+  <section class="tecnologia">
+    <h2>Principais tecnologias utilizadas pela <span style="color:#0057ff; font-weight:600;">BrandCode Solutions</span>
+    </h2>
+    <div class="tecnologia-logos">
+      <img src="images/tec1.png" alt="Tecnologia 1" />
+      <img src="images/tec2.png" alt="Tecnologia 2" />
+      <img src="images/tec3.png" alt="Tecnologia 3" />
+      <img src="images/tec4.png" alt="Tecnologia 4" />
+      <img src="images/tec5.png" alt="Tecnologia 5" />
+      <img src="images/tec6.png" alt="Tecnologia 6" />
+      <img src="images/tec7.png" alt="Tecnologia 7" />
+      <img src="images/tec8.png" alt="Tecnologia 8" />
+      <img src="images/tec9.png" alt="Tecnologia 9" />
+      <img src="images/tec10.png" alt="Tecnologia 10" />
+      <img src="images/tec11.png" alt="Tecnologia 11" />
+      <img src="images/tec12.png" alt="Tecnologia 12" />
+      <img src="images/tec13.png" alt="Tecnologia 13" />
+      <img src="images/tec14.png" alt="Tecnologia 14" />
+      <img src="images/tec15.png" alt="Tecnologia 15" />
+    </div>
+  </section>
+
+  <!-- CONTRATAR -->
+  <section class="contratar">
+    <h2>Por que nos escolher?</h2>
+    <p>Escolher a <span class="destaque">BrandCode Solutions</span> significa apostar em experiência comprovada,
+      soluções personalizadas e tecnologia de ponta. <span class="destaque">Desenvolvemos sites, softwares e aplicativos
+        sob medida</span>, pensados para atender às necessidades reais do seu negócio e gerar resultados concretos.
+      <span class="destaque">Nossa equipe está dedicada ao sucesso da sua empresa</span>, oferecendo suporte contínuo
+      para garantir performance e atualização constante! Com foco em inovação e resultados, <span
+        class="destaque">criamos soluções modernas que aumentam a visibilidade, engajamento e crescimento da sua
+        marca</span>. Sendo assim, você estará sempre à frente da concorrência, com soluções eficientes, <span
+        class="destaque">atualizadas e alinhadas às tendências do mercado</span>.
+    </p>
+    <a href="https://wa.me/5518998037956" target="_blank" class="btn btn-azul">Receber Orçamento Exclusivo!</a>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <h2 class="text-center mb-4">Respostas para dúvidas frequentes</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">Como é o processo de desenvolvimento de um projeto na BrandCode Solutions?</div>
+      <div class="faq-answer">
+        Começamos com uma reunião para que você conheça a BrandCode Solutions e compartilhe suas expectativas. Em
+        seguida, desenvolvemos um protótipo imediato, permitindo que você visualize como seu produto funcionará – e tudo
+        isso totalmente gratuito!
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Qual o prazo médio de desenvolvimento de um projeto com a BrandCode Solutions?</div>
+      <div class="faq-answer">
+        O prazo de desenvolvimento varia conforme a complexidade e o escopo do projeto. Na BrandCode Solutions,
+        priorizamos entregas eficientes sem comprometer a qualidade. Prazos específicos são discutidos durante a
+        consultoria inicial, garantindo alinhamento completo com suas necessidades.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">As soluções da BrandCode Solutions (sites, softwares e aplicativos) funcionam
+        perfeitamente em todos os dispositivos?</div>
+      <div class="faq-answer">
+        Sim! A BrandCode Solutions oferece soluções de alta qualidade, sempre priorizando a experiência do usuário.
+        Criamos designs intuitivos e totalmente responsivos, garantindo navegação fácil. Além disso, nossos aplicativos
+        são desenvolvidos de forma híbrida e nativa, assegurando compatibilidade completa com Android e iOS.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">A BrandCode Solutions realiza atualizações em projetos desenvolvidos por outras
+        empresas?</div>
+      <div class="faq-answer">
+        Sim! A BrandCode Solutions pode realizar atualizações em projetos já concluídos, mesmo que tenham sido
+        desenvolvidos por outras empresas. Manter os dados e elementos da sua marca atualizados é fundamental para
+        garantir consistência, eficiência e uma experiência de usuário de qualidade.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Posso contar com os serviços da BrandCode Solutions na minha região?</div>
+      <div class="faq-answer">
+        A BrandCode Solutions já atuou em 8 estados do Brasil e em diversas regiões da Europa. Trabalhamos de forma
+        totalmente remota, o que nos permite atender você onde quer que esteja, com a mesma qualidade e eficiência.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">É possível contar com suporte da BrandCode Solutions após a entrega do projeto?</div>
+      <div class="faq-answer">
+        Com certeza! A BrandCode Solutions oferece suporte dedicado mesmo após a entrega do projeto, garantindo que você
+        tenha acompanhamento contínuo e solução rápida para qualquer necessidade.
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+          const item = question.parentElement;
+          item.classList.toggle('active');
+        });
+      });
+    </script>
+
+  </section>
+
+
+  <!-- VOLTAR AO TOPO -->
+  <div class="voltar-topo">
+    <a href="#topo">⬆️<br>VOLTAR AO TOPO</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="contato">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-4 mb-4">
+          <h5>BrandCode Solutions</h5>
+          <p>contato@brandcodesolutions.com.br</p>
+          <p>WhatsApp: +55 (18) 99674-2364</p>
+          <p>Instagram: @brandcodesolutions</p>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <h5>Páginas</h5>
+          <ul class="footer-links">
+            <li><a href="sites.html">Sites Profissionais</a></li>
+            <li><a href="softwares.html">Softwares Sob Demanda</a></li>
+            <li><a href="aplicativos.html">Aplicativos Modernos</a></li>
+          </ul>
+        </div>
+
+        <!--<div class="col-md-4 mb-4">
+          <h5>Institucional</h5>
+          <ul class="footer-links">
+            <li><a href="#">Missão, Visão e Valores</a></li>
+            <li><a href="#">Nossa História</a></li>
+          </ul>
+        </div>
+      </div>-->
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2022-2025 BrandCode Solutions. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO WHATSAPP FLUTUANTE -->
+  <a href="https://wa.me/5518996742364" class="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" />
+  </a>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
