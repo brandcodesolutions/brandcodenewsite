@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Janaina Paiva - BrandCode Solutions</title>
+  <style>
+    .hero-fernanda {
+      background: #000000;
+      color: white;
+      padding: 20px 20px;
+      text-align: center;
+      margin-top: 0;
+      min-height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-fernanda-content {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+    .hero-fernanda-text {
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+    }
+    .hero-fernanda-text h2 {
+      font-size: 34px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .hero-fernanda-text p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #e0e0e0;
+    }
+    .hero-fernanda-photo {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+    .hero-fernanda-photo img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+    }
+    .sobre-fernanda {
+      padding: 80px 20px;
+      background: #000000;
+    }
+    .sobre-fernanda h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #ffffff;
+    }
+    .sobre-fernanda-content {
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.8;
+      color: #e0e0e0;
+      font-size: 16px;
+      text-align: center;
+    }
+    .servicos-fernanda {
+      padding: 40px 20px 80px 20px;
+      background: #000000;
+      margin-top: 2rem;
+    }
+    .servicos-fernanda h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 60px;
+      text-align: center;
+      color: #ffffff;
+    }
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .servico-card {
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      border: 1px solid #333;
+    }
+    .servico-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 35px rgba(0, 87, 255, 0.3);
+    }
+    .servico-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-top: 20px;
+    }
+    .servico-card p {
+      color: #b0b0b0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .whatsapp-form-section {
+      padding: 80px 20px;
+      background: #000000;
+      color: #e0e0e0;
+    }
+    .whatsapp-form-section h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 50px;
+      text-align: center;
+      color: #ffffff;
+    }
+    .form-container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .form-group {
+      margin-bottom: 25px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      color: #ffffff;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #0057ff;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #1a1a1a;
+      color: #ffffff;
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0, 87, 255, 0.2);
+      border-color: #0057ff;
+    }
+    .form-group select {
+      cursor: pointer;
+    }
+    .btn-enviar {
+      width: 100%;
+      padding: 14px;
+      background: #0057ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .btn-enviar:hover {
+      background: #0047cc;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0, 87, 255, 0.4);
+    }
+    footer {
+      background: #000000 !important;
+      color: #e0e0e0 !important;
+      border-top: 1px solid #333;
+    }
+    footer h5 {
+      color: #ffffff !important;
+    }
+    footer p {
+      color: #b0b0b0 !important;
+    }
+    footer a {
+      color: #b0b0b0 !important;
+    }
+    footer a:hover {
+      color: #ffffff !important;
+    }
+    .footer-bottom {
+      background: #0a0a0a !important;
+      color: #666 !important;
+      border-top: 1px solid #333;
+      margin-top: 40px !important;
+      padding: 20px 0 !important;
+    }
+    .clientes img {
+      filter: grayscale(0%) brightness(1.2) !important;
+    }
+    .btn-ajudar-fernanda {
+      background-color: #0057ff;
+      color: white;
+      border: none;
+      padding: 14px 35px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .btn-ajudar-fernanda:hover {
+      background-color: #0047cc;
+    }
+    .mapa {
+      padding: 3rem 1rem !important;
+      margin-bottom: -2rem !important;
+    }
+    .clientes {
+      padding: 3rem 1rem !important;
+    }
+    .footer-imagem-circular {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      overflow: hidden;
+      border: 2px solid #333;
+    }
+    .footer-imagem-circular img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      transform: scale(1.2);
+    }
+    .mapa {
+      background: #000000 !important;
+    }
+    .mapa h2 {
+      color: #ffffff !important;
+    }
+    .mapa p {
+      color: #b0b0b0 !important;
+    }
+    .clientes {
+      background: #000000 !important;
+    }
+    .clientes h2 {
+      color: #ffffff !important;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #25d366;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .whatsapp-float img {
+      width: 35px;
+      height: 35px;
+      filter: brightness(0) invert(1);
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: #1ebe5d;
+    }
+    .btn-fale-comigo {
+      display: none;
+      margin-top: 25px;
+      padding: 14px 35px;
+      background-color: #0057ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .btn-fale-comigo:hover {
+      background-color: #0047cc;
+      color: white;
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .hero-fernanda { padding: 15px 5px; }
+      .hero-fernanda-content { display: flex; flex-direction: column; gap: 15px; align-items: center; }
+      .hero-fernanda-text { min-width: auto; padding-left: 0; text-align: center; }
+      .hero-fernanda-photo { width: 100%; text-align: center; }
+      .hero-fernanda-text h2 { font-size: 24px; margin-bottom: 8px; margin-top: -35px; }
+      .hero-fernanda-text p { font-size: 16px; margin-bottom: 8px; }
+      .hero-fernanda-photo img { width: 300px; height: auto; }
+      .btn-ajudar-fernanda { display: none; }
+      .sobre-fernanda h2, .servicos-fernanda h2, .whatsapp-form-section h2 { font-size: 24px; }
+      .servicos-grid { grid-template-columns: 1fr; }
+      .footer-imagem-circular { width: 120px; height: 120px; margin: 0; }
+      .whatsapp-float { position: fixed !important; bottom: 20px !important; right: 20px !important; width: 60px !important; height: 60px !important; display: flex !important; z-index: 1000 !important; }
+      .btn-fale-comigo { display: inline-block; }
+    }
+  </style>
+  <link rel="icon" href="images/favicon-16x16.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- HERO FERNANDA -->
+  <section class="hero-fernanda">
+    <div class="hero-fernanda-content">
+      <div class="hero-fernanda-text">
+        <h2>Seu cliente está<br>
+          procurando o seu<br>
+          negócio no Google,<br>
+          mas não consegue<br>
+          encontrá-lo.</h2>
+        <button class="btn-ajudar-fernanda" onclick="document.querySelector('#servicos').scrollIntoView({behavior: 'smooth'})">Eu posso ajudar você!</button>
+      </div>
+      <div class="hero-fernanda-photo">
+        <img src="images/janaina.png" alt="Janaina Paiva">
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE FERNANDA -->
+  <section class="sobre-fernanda">
+    <h2>Quem sou eu?</h2>
+    <div class="sobre-fernanda-content">
+      <p>
+        Muito prazer! Me chamo Janaina Paiva e atuo como consultora de vendas na BrandCode Solutions. Entre em contato comigo para que eu possa compreender o momento atual da sua empresa e direcionar a solução mais adequada, alinhada aos seus objetivos e necessidades. Estou à disposição para te auxiliar na escolha do site ideal para o seu negócio.
+      </p>
+      <a href="https://wa.me/5541995951028" class="btn-fale-comigo" target="_blank">
+        <i class="fab fa-whatsapp"></i> Fale comigo no WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="servicos-fernanda" id="servicos">
+    <h2>Como posso ajudar você:</h2>
+    <div class="servicos-grid">
+      <div class="servico-card">
+        <i class="fas fa-shopping-cart" style="font-size: 40px; color: #0057ff;"></i>
+        <h3>E-commerce</h3>
+        <p>Plataformas de vendas online otimizadas e seguras para aumentar suas vendas.</p>
+      </div>
+      <div class="servico-card">
+        <i class="fas fa-file-alt" style="font-size: 40px; color: #0057ff;"></i>
+        <h3>Landing Page</h3>
+        <p>Páginas estratégicas para captar leads e converter visitantes em clientes.</p>
+      </div>
+      <div class="servico-card">
+        <i class="fas fa-building" style="font-size: 40px; color: #0057ff;"></i>
+        <h3>Site Institucional</h3>
+        <p>Apresente sua empresa com um site profissional e confiável.</p>
+      </div>
+      <div class="servico-card">
+        <i class="fas fa-briefcase" style="font-size: 40px; color: #0057ff;"></i>
+        <h3>Site Portfólio</h3>
+        <p>Mostre seus trabalhos e conquiste novos clientes com seu portfólio online.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPA -->
+  <section class="mapa">
+    <h2>A BrandCode Solutions</h2>
+    <p>
+      A BrandCode Solutions é uma empresa de tecnologia que já entregou soluções em diversas regiões do país, oferecendo serviços digitais de alta qualidade, eficientes e totalmente personalizados para cada projeto.
+    </p>
+    <img src="images/brandcodemap.png" alt="Estados em que estamos presentes" />
+  </section>
+
+  <!-- CLIENTES -->
+  <section class="clientes">
+    <h2>Nossos clientes</h2>
+    <div class="clientes-logos">
+      <img src="images/logo1.png" alt="Cliente 1" />
+      <img src="images/logo2.png" alt="Cliente 2" />
+      <img src="images/logo3.png" alt="Cliente 3" />
+      <img src="images/logo4.png" alt="Cliente 4" />
+      <img src="images/logo5.png" alt="Cliente 5" />
+      <img src="images/logo6.png" alt="Cliente 6" />
+      <img src="images/logo7.png" alt="Cliente 7" />
+      <img src="images/logo8.png" alt="Cliente 8" />
+      <img src="images/logo9.png" alt="Cliente 9" />
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO WHATSAPP -->
+  <section class="whatsapp-form-section">
+    <h2>Deixe uma mensagem no WhatsApp</h2>
+    <div class="form-container">
+      <form id="whatsappForm">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+        </div>
+        <div class="form-group">
+          <label for="empresa">Nome da Empresa</label>
+          <input type="text" id="empresa" name="empresa" required placeholder="Nome da sua empresa">
+        </div>
+        <div class="form-group">
+          <label for="ramo">Ramo de Atuação</label>
+          <input type="text" id="ramo" name="ramo" required placeholder="Ex: Loja, Consultoria, Educação...">
+        </div>
+        <button type="submit" class="btn-enviar">
+          <i class="fab fa-whatsapp"></i> Enviar formulário no WhatsApp
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contato">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-4 mb-4">
+          <div class="footer-imagem-circular">
+            <img src="images/janainafooter.png" alt="Imagem do Footer" />
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <h5>Serviços</h5>
+          <ul class="footer-links">
+            <li><a href="#">E-commerce</a></li>
+            <li><a href="#">Landing Page</a></li>
+            <li><a href="#">Site Institucional</a></li>
+            <li><a href="#">Site Portfólio</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <h5>Empresa</h5>
+          <p>Site: www.brandcodesolutions.com.br</p>
+          <p>Email: contato@brandcodesolutions.com.br</p>
+          <p>Instagram: @brandcodesolutions</p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 BrandCode Solutions. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO WHATSAPP FLUTUANTE -->
+  <a href="https://wa.me/5541995951028" class="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" />
+  </a>
+
+  <script>
+    document.getElementById("whatsappForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const nome = document.getElementById("nome").value;
+      const empresa = document.getElementById("empresa").value;
+      const mensagem = "Olá, eu me chamo " + nome + ", sou proprietário(a) da empresa " + empresa + " e gostaria de saber qual seria o site ideal para mim.";
+      const numeroWhatsApp = "5541995951028";
+      const mensagemCodificada = encodeURIComponent(mensagem);
+      const urlWhatsApp = "https://wa.me/" + numeroWhatsApp + "?text=" + mensagemCodificada;
+      window.open(urlWhatsApp, "_blank");
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

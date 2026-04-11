@@ -1,0 +1,193 @@
+:root {
+  --preto: #000;
+  --azul: #0057ff;
+  --branco: #ffffff;
+  --cinza: #ececec;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.95) !important;
+  backdrop-filter: blur(6px);
+  padding: 0.6rem 1rem;
+}
+
+.navbar-brand img {
+  border-radius: 10px;
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar .nav-link {
+  color: var(--cinza);
+  padding: 0.8rem 1rem;
+  transition: color 0.3s;
+}
+
+.navbar .nav-link:hover {
+  color: var(--azul);
+}
+
+/* Espaço pro conteúdo não ficar sob o header fixo */
+body {
+  padding-top: 70px;
+}
+
+
+body {
+  background-color: var(--preto);
+  color: var(--cinza);
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--branco);
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: var(--azul);
+}
+
+/* === HERO === */
+.hero {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  padding-top: 3%;
+}
+
+.hero p {
+  color: var(--cinza);
+  max-width: 700px;
+}
+
+/* === TECNOLOGIA === */
+.tecnologia {
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+.tecnologia-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
+.tecnologia img {
+  width: 100px;
+}
+
+/* === CONTRATAR === */
+.contratar {
+  text-align: center;
+  padding: 5rem 1rem;
+  background-color: #000;
+}
+
+.contratar p {
+  max-width: 800px;
+  margin: 1.5rem auto;
+  font-size: 1.1rem;
+}
+
+.contratar .destaque {
+  color: var(--azul);
+  font-weight: 600;
+}
+
+.btn-azul {
+  background-color: var(--azul);
+  color: var(--branco);
+  border-radius: 10px;
+  padding: 0.75rem 2rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-azul:hover {
+  box-shadow: 0 0 10px var(--azul);
+  transform: scale(1.05);
+}
+
+/* === FOOTER === */
+footer {
+  background-color: var(--preto);
+  color: var(--cinza);
+  padding: 3rem 0;
+}
+
+footer h5 {
+  color: #0057ff;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: var(--cinza);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #0057ff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  color: #0057ff;
+  font-weight: 600;
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .clientes img {
+    width: 80px;
+  }
+
+  .tecnologia-logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    margin-top: 2rem;
+  }
+
+  .tecnologia img {
+    width: 80px;
+  }
+}
+
+
